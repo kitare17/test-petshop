@@ -1,0 +1,20 @@
+SMAP
+blog_jsp.java
+JSP
+*S JSP
+*F
++ 0 blog.jsp
+blog.jsp
++ 1 blog-form.jsp
+include/blog-form.jsp
++ 2 footer.jsp
+include/footer.jsp
+*L
+5,2:50
+5#1,235:52
+7#0,2:286
+5#1,235:288
+9#0:522
+5#2,95:523
+10#0:617
+*E
