@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.config.DBConnect;
+import model.object.Isvalid;
 
 /**
  *
@@ -32,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegisterServlet</title>");            
+            out.println("<title>Servlet RegisterServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
@@ -67,7 +69,23 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+//        String confirmPassword = request.getParameter("confirmPassword");
+        String fullName = request.getParameter("fullName");
+        String age = request.getParameter("age");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        if (!Isvalid.isValidUsername(username) || !Isvalid.isValidPhoneNumber(phone) || !Isvalid.isValidEmail(email)) {
+            request.setAttribute("message", "Thông tin không hợp lệ");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        } else {
+            DBConnect.register(username, password, fullName, age, email, phone, address);
+            request.setAttribute("message", "Tạo tài khoản thành công");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        }
     }
 
     /**

@@ -3,26 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/register-form.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/header.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/service-form.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/product.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/index.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/product-form.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/detail.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/about.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/src/java/model/config/DBConnect.java</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/blog.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/blog-form.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/testmonial.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/register.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/service.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/login.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/detail-form.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/src/java/model/controller/LoginServlet.java</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/about-form.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/testmonial-form.jsp</file>
-            <file>file:/D:/NetBeans%20Projects/PetShop/web/include/footer.jsp</file>
+            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/controller/RegisterServlet.java</file>
+            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/controller/LoginServlet.java</file>
+            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/config/DBConnect.java</file>
+            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/object/Isvalid.java</file>
         </group>
     </open-files>
 </project-private>
