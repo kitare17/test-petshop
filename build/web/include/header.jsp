@@ -92,7 +92,7 @@
                         <a href="detail.jsp" class="dropdown-item">Blog Detail</a>
                     </div>
                 </div>
-                <a href="contact.jsp" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log in <i class="bi bi-arrow-right"></i></a>
+                <a href="login.jsp" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log in <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </nav>
