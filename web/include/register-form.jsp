@@ -18,28 +18,28 @@
                 <form onsubmit="return validateForm()" action="register" method="post">
                     <div class="row g-3">
                         <div class="col-12">
-                            <input type="text" name ="username" class="form-control bg-light border-0 px-4" placeholder="User Name" style="height: 55px;">
+                            <input type="text" name ="username" minlength="7" maxlength="50" required pattern="[a-zA-Z0-9]+" class="form-control bg-light border-0 px-4" placeholder="User Name" style="height: 55px;">
                         </div>
                         <div class="col-12">
-                            <input type="password" name ="password" id="password" class="form-control bg-light border-0 px-4" placeholder="Password" style="height: 55px;">
+                            <input type="password" minlength="7" maxlength="50" name ="password" id="password" class="form-control bg-light border-0 px-4" placeholder="Password" style="height: 55px;" required>
                         </div>
                         <div class="col-12">
-                            <input type="password" name ="confirmPassword" id="confirm-password" class="form-control bg-light border-0 px-4" placeholder="Confirm Password" style="height: 55px;">
+                            <input type="password" minlength="7" maxlength="50" name ="confirmPassword" id="confirm-password" class="form-control bg-light border-0 px-4" placeholder="Confirm Password" style="height: 55px;" required>
                         </div>
                         <div class="col-12">
-                            <input type="text" name ="fullName" class="form-control bg-light border-0 px-4" placeholder="Full Name" style="height: 55px;">
+                            <input type="text" name ="fullName" class="form-control bg-light border-0 px-4" placeholder="Full Name" style="height: 55px;" required>
                         </div>
                         <div class="col-12">
-                            <input type="number" name ="age" class="form-control bg-light border-0 px-4" placeholder="Age" min="10" max="100" style="height: 55px;">
+                            <input type="number" name ="age" class="form-control bg-light border-0 px-4" placeholder="Age" min="10" max="100" style="height: 55px;" required>
                         </div>
                         <div class="col-12">
-                            <input type="text" name ="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;">
+                            <input type="email" name ="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;" required>
                         </div>
                         <div class="col-12">
-                            <input type="text" name ="phone" class="form-control bg-light border-0 px-4" placeholder="Phone number" style="height: 55px;">
+                            <input type="tel" maxlength="10" minlength="10" required pattern="[0-9]{10}" name = "phone" class="form-control bg-light border-0 px-4" placeholder="Phone number" style="height: 55px;" required>
                         </div>
                         <div class="col-12">
-                            <input type="text" name ="address" class="form-control bg-light border-0 px-4" placeholder="Address" style="height: 55px;">
+                            <input type="text" name ="address" class="form-control bg-light border-0 px-4" placeholder="Address" style="height: 55px;" required>
                         </div>
                         <div class="col-12">
                             <button class="btn btn-primary w-100 py-3" type="submit">Register</button>
