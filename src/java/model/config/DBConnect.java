@@ -8,6 +8,7 @@ package model.config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,16 +37,18 @@ public interface DBConnect {
 
 //    Test connection
     public static void main(String[] args) {
-        try {
-            if (DBConnect.getConnection() != null) {
-                System.out.println("Connect successfully!");
-            } else {
-                System.out.println("Connect failed!");
-            }
-        } catch (Exception ex) {
-            System.out.println(ex);
-            System.out.println("Error at model.DBContext.DBContext().getConnertion()");
-        }
+//        try {
+//            if (DBConnect.getConnection() != null) {
+//                System.out.println("Connect successfully!");
+//            } else {
+//                System.out.println("Connect failed!");
+//            }
+//        } catch (Exception ex) {
+//            System.out.println(ex);
+//            System.out.println("Error at model.DBContext.DBContext().getConnertion()");
+//        }
+System.out.println(checkUserNameExist("trumquang2002"));
+        
     }
     public static int register(String username,String password,String fullname,String age,String email,String phone,String address) {
         try {
@@ -69,5 +72,19 @@ public interface DBConnect {
 
 
 }
+    public static boolean checkUserNameExist(String username) {
+        try {
+            Connection con = DBConnect.getConnection();
+             PreparedStatement stmt=con.prepareStatement("select * from tblUser  where UserName =?");
+             stmt.setString(1, username);
+             ResultSet resultSet = stmt.executeQuery();
+             return resultSet.next();
+              
+        } catch(Exception e) {
+            System.out.println("loi checkUserNameExsit(String userName)");
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
 
