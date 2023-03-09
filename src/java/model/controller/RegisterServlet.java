@@ -78,8 +78,8 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        if (!Isvalid.isValidUsername(username) || !Isvalid.isValidPhoneNumber(phone) || !Isvalid.isValidEmail(email)) {
-            request.setAttribute("message", "Thông tin không hợp lệ");
+        if (DBConnect.checkUserNameExist(username)) {
+            request.setAttribute("message", "Tài khoản " + username + " đã tồn tại");
             request.getRequestDispatcher("register.jsp").forward(request, response);
         } else {
             DBConnect.register(username, password, fullName, age, email, phone, address);
