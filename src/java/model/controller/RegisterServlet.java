@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.config.DBConnect;
-import model.object.Isvalid;
+import model.entity.User;
+import model.service.Isvalid;
+import model.service.UserService;
 
 /**
  *
@@ -74,15 +76,17 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
 //        String confirmPassword = request.getParameter("confirmPassword");
         String fullName = request.getParameter("fullName");
-        String age = request.getParameter("age");
+        int age = Integer.parseInt(request.getParameter("age")) ;
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        if (DBConnect.checkUserNameExist(username)) {
+
+        User user= new User(username, password, fullName, age, email, phone, address);
+        if (UserService.checkUserNameExist(username)) {
             request.setAttribute("message", "Tài khoản " + username + " đã tồn tại");
             request.getRequestDispatcher("register.jsp").forward(request, response);
         } else {
-            DBConnect.register(username, password, fullName, age, email, phone, address);
+            UserService.addUser(user);
             request.setAttribute("message", "Tạo tài khoản thành công");
             request.getRequestDispatcher("register.jsp").forward(request, response);
         }
