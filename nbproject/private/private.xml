@@ -2,15 +2,5 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
-        <group>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/controller/RegisterServlet.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/controller/LoginServlet.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/config/DBConnect.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/object/Isvalid.java</file>
-        </group>
->>>>>>> fd01c7ec35e1be060e39c150f3e4871d77e6690e
     </open-files>
 </project-private>
