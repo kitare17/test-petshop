@@ -1,4 +1,4 @@
-package model.object;
+package model.service;
 
 import java.util.regex.Pattern;
 
