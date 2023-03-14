@@ -5,9 +5,8 @@
 --%>
 
 <%@include file="include/header.jsp" %>
-<%@include file="include/product-form.jsp" %>
-
-
+<%@include file="include/food_form.jsp" %>
+<%@include file="include/pet_form.jsp" %>
 <%@include file="include/footer.jsp" %>
     
     

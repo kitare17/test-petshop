@@ -1,0 +1,44 @@
+SMAP
+product_jsp.java
+JSP
+*S JSP
+*F
++ 0 product.jsp
+product.jsp
++ 1 header.jsp
+include/header.jsp
++ 2 food_form.jsp
+include/food_form.jsp
++ 3 pet_form.jsp
+include/pet_form.jsp
++ 4 footer.jsp
+include/footer.jsp
+*L
+5,3:65
+5#1,92:67
+96:325,8
+97,2:333
+98,2:161
+99:353,8
+100:361
+101:362,3
+102,7:365
+108,5:165
+7#0:169,2
+5#2,14:171
+18:390,11
+19:401
+20,5:402,3
+25,3:417
+27,4:187
+8#0:190,2
+5#3,11:192
+15:444,11
+16:455
+17,6:456,3
+23,3:474
+25,4:205
+9#0:208,2
+5#4,95:210
+10#0,4:304
+*E
