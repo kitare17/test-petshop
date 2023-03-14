@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.entity.Cart;
 import model.entity.User;
 import model.service.UserService;
 
@@ -82,6 +83,7 @@ public class LoginServlet extends HttpServlet {
         if(user!=null){
             HttpSession session=request.getSession();
             session.setAttribute("user", user);
+            session.setAttribute("Cart", new Cart());
             response.sendRedirect("index.jsp");
             
         }

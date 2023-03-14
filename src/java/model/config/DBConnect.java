@@ -18,17 +18,17 @@ import java.util.logging.Logger;
  */
 public interface DBConnect {
  //Quang  
-//    public static String serverName = "LAPTOP-7UOA152U\\SQLEXPRESS";
-//    public static String dbName = "PetshopDB";
-//    public static String portNumber = "1433";
-//    public static String userID = "sa";
-//    public static String password = "kungkimp3";
-//Khoa    
-    public static String serverName = "DESKTOP-0748AC0\\SQLEXPRESS";
+    public static String serverName = "LAPTOP-7UOA152U\\SQLEXPRESS";
     public static String dbName = "PetshopDB";
     public static String portNumber = "1433";
     public static String userID = "sa";
-    public static String password = "123456789";
+    public static String password = "kungkimp3";
+//Khoa    
+//    public static String serverName = "DESKTOP-0748AC0\\SQLEXPRESS";
+//    public static String dbName = "PetshopDB";
+//    public static String portNumber = "1433";
+//    public static String userID = "sa";
+//    public static String password = "123456789";
 //Bao
     //
     public static Connection getConnection() {
