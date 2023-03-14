@@ -6,20 +6,31 @@ package model.entity;
  */
 public class Product {
     
-    private String productId;
-    private String productName;
-    private String productType;
-    private double productPrice;
-
+    protected String productId;
+    protected String productName;
+    protected String productType;
+    protected double productPrice;
+    protected int productAmount;
     public Product() {
     }
 
-    public Product(String productId, String productName, String productType, double productPrice) {
+    public Product(String productId, String productName, String productType, double productPrice, int productAmount) {
         this.productId = productId;
         this.productName = productName;
         this.productType = productType;
         this.productPrice = productPrice;
+        this.productAmount = productAmount;
     }
+
+    public int getProductAmount() {
+        return productAmount;
+    }
+
+    public void setProductAmount(int productAmount) {
+        this.productAmount = productAmount;
+    }
+
+   
 
     public String getProductId() {
         return productId;
@@ -52,4 +63,16 @@ public class Product {
     public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" + "productId=" + productId + ", productName=" + productName + ", productType=" + productType + ", productPrice=" + productPrice + ", productAmount=" + productAmount + '}';
+    }
+
+    
+
+ 
+  
+   
+    
 }
