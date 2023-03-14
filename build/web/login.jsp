@@ -79,19 +79,22 @@
                         </div>
                     </div>
                 </div>
-                <form action="" method="" class="login">
+                <form action="login" method="post" class="login" >
                     <label class="khung-user">
                         <div class=""></div>
                         <input name="username" class="username" type="text" autocomplete="on" placeholder="User name" />
                     </label>
                     <label class="khung-pass">
                         <div class=""></div>
-                        <input name="pass" class="password" type="password" autocomplete="off" placeholder="Password" />
+                        <input name="password" class="password" type="password" autocomplete="off" placeholder="Password" />
                     </label>
                     <label>
                         <input type="submit" value="Login" class="login-button">
                     </label>
                 </form>
+                
+                <%-- sua cai nay--%>
+                ${thongbao}
                 <div class="social-buttons">
                     <h3>Don't have any account yet? <a href="register.jsp">Sign up</a></h3>
                 </div>
