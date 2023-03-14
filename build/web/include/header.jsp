@@ -96,6 +96,16 @@
                     <c:if test="${sessionScope.user==null}">
                         <a href="login.jsp" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log in <i class="bi bi-arrow-right"></i></a>
                         </c:if>
+                    <c:if test="${sessionScope.user!=null}">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle bg-primary text-white px-5 ms-lg-5" data-bs-toggle="dropdown">${sessionScope.user.userName}</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="inforUser.jsp" class="dropdown-item">Your information</a>
+                            <a href="#" class="dropdown-item">Your cart</a>
+                            <a href="#" class="dropdown-item text-danger">Log out</a>
+                        </div>
+                    </div>
+                        </c:if>    
                 </div>
             </div>
         </nav>
