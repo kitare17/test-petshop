@@ -62,6 +62,7 @@ public class productShowServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
       ArrayList<Pet> listPet= ProductService.listPet();
         ArrayList<Food>listFood=ProductService.listFood();
         request.setAttribute("listPet", listPet);

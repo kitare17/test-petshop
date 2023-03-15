@@ -69,7 +69,6 @@ public class UserRepository {
                 String userEmail=results.getString(5); 
                 String userPhone=results.getString(6);
                 String userAdress=results.getString(7);
-                String userRole=results.getString(8);
                  user=new User( userName,  userPass,  userFullName,  userAge, userEmail,  userPhone,  userAdress);
             }
 
