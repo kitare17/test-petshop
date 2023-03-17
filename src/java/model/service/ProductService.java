@@ -21,4 +21,10 @@ public class ProductService {
     public static ArrayList<Food> listFood(){
         return ProductRepository.listFood();
     }
+    public static ArrayList<Pet> listCat(){
+        return ProductRepository.listCat();
+    }
+    public static ArrayList<Pet> listDog(){
+        return ProductRepository.listDog();
+    }
 }
