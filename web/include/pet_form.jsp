@@ -40,6 +40,7 @@
     
 <%--       <div>
             ${pet.productId}
+ok
             ${pet.productName}
             ${pet.productType}
             ${pet.productPrice}
