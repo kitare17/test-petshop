@@ -1,4 +1,9 @@
-package model.controller;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,17 +12,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.config.DBConnect;
+import javax.servlet.http.HttpSession;
+import model.entity.Cart;
 import model.entity.User;
-import model.service.Isvalid;
 import model.service.UserService;
 
 /**
  *
- * @author quang
+ * @author Admin
  */
-@WebServlet(name = "RegisterServlet", urlPatterns = {"/register"})
-public class RegisterServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,15 +36,15 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegisterServlet</title>");
+            out.println("<title>Servlet LoginServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -57,7 +62,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       response.sendRedirect("login.jsp");
     }
 
     /**
@@ -71,24 +76,20 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-//        String confirmPassword = request.getParameter("confirmPassword");
-        String fullName = request.getParameter("fullName");
-        int age = Integer.parseInt(request.getParameter("age")) ;
-        String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
-        String address = request.getParameter("address");
-
-        User user= new User(username, password, fullName, age, email, phone, address);
-        if (UserService.checkUserNameExist(username)) {
-            request.setAttribute("message", "Tài khoản " + username + " đã tồn tại");
-            request.getRequestDispatcher("register.jsp").forward(request, response);
-        } else {
-            UserService.addUser(user);
-            request.setAttribute("message", "Tạo tài khoản thành công");
-            request.getRequestDispatcher("register.jsp").forward(request, response);
+        String username=request.getParameter("username");
+        String password=request.getParameter("password");
+        User user=UserService.checkLogin(username, password);
+        System.out.println(user);
+        if(user!=null){
+            HttpSession session=request.getSession();
+            session.setAttribute("user", user);
+            session.setAttribute("cart", new Cart());
+            response.sendRedirect("index.jsp");
+            
+        }
+        else{
+            request.setAttribute("thongbao", "Thông tin đăng nhập không chính xác");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 

@@ -1,28 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package model.controller;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.entity.Food;
-import model.entity.Pet;
-import model.service.ProductService;
+import model.config.DBConnect;
+import model.entity.User;
+import model.service.Isvalid;
+import model.service.UserService;
 
 /**
  *
- * @author PC
+ * @author quang
  */
-@WebServlet(name = "productShowServlet", urlPatterns = {"/product"})
-public class productShowServlet extends HttpServlet {
+@WebServlet(name = "RegisterServlet", urlPatterns = {"/register"})
+public class RegisterServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,15 +31,15 @@ public class productShowServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet productShowServlet</title>");            
+            out.println("<title>Servlet RegisterServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet productShowServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,12 +57,7 @@ public class productShowServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setCharacterEncoding("UTF-8");
-      ArrayList<Pet> listPet= ProductService.listPet();
-        ArrayList<Food>listFood=ProductService.listFood();
-        request.setAttribute("listPet", listPet);
-        request.setAttribute("listFood", listFood);
-       request.getRequestDispatcher("product.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -81,7 +71,25 @@ public class productShowServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+//        processRequest(request, response);
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+//        String confirmPassword = request.getParameter("confirmPassword");
+        String fullName = request.getParameter("fullName");
+        int age = Integer.parseInt(request.getParameter("age")) ;
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+
+        User user= new User(username, password, fullName, age, email, phone, address);
+        if (UserService.checkUserNameExist(username)) {
+            request.setAttribute("message", "Tài khoản " + username + " đã tồn tại");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        } else {
+            UserService.addUser(user);
+            request.setAttribute("message", "Tạo tài khoản thành công");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        }
     }
 
     /**

@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class product_002ddetail_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -12,14 +12,12 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(4);
+    _jspx_dependants = new java.util.ArrayList<String>(3);
     _jspx_dependants.add("/include/header.jsp");
-    _jspx_dependants.add("/include/food_form.jsp");
-    _jspx_dependants.add("/include/pet_form.jsp");
+    _jspx_dependants.add("/include/product-detail-form.jsp");
     _jspx_dependants.add("/include/footer.jsp");
   }
 
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -29,12 +27,10 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
-    _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
-    _jspx_tagPool_c_forEach_var_items.release();
     _jspx_tagPool_c_if_test.release();
   }
 
@@ -51,7 +47,7 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -62,8 +58,10 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -166,72 +164,75 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </nav>\r\n");
-      out.write('\r');
       out.write('\n');
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>JSP Page</title>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("\r\n");
-      out.write("        ");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("        <div class=\"container-fluid border-bottom d-none d-lg-block\">\r\n");
-      out.write("            <div class=\"container\">\r\n");
-      out.write("                <div class=\"border-start border-5 border-primary ps-5 mb-5\" style=\"max-width: 600px;\">\r\n");
-      out.write("                    <h6 class=\"text-primary text-uppercase\">Pet's Food</h6>\r\n");
-      out.write("                    <h1 class=\"display-5 text-uppercase mb-0\">PRODUCTS FOR YOUR BEST FRIENDS</h1>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"row g-5 d-flex flex-row\">\r\n");
-      out.write("                    ");
-      if (_jspx_meth_c_forEach_0(_jspx_page_context))
-        return;
-      out.write("\r\n");
-      out.write("                </div>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </div>\r\n");
-      out.write("\r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
-      out.write('\r');
-      out.write('\n');
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>JSP Page</title>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("        <div class=\"container-fluid border-bottom d-none d-lg-block\">\r\n");
-      out.write("            <div class=\"container\">\r\n");
-      out.write("                <div class=\"border-start border-5 border-primary ps-5 mb-5\" style=\"max-width: 600px;\">\r\n");
-      out.write("                    <h6 class=\"text-primary text-uppercase\">Pets</h6>\r\n");
-      out.write("                    <h1 class=\"display-5 text-uppercase mb-0\">A FRIEND FOR YOUR LIFE</h1>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"row g-5 d-flex flex-row\">\r\n");
-      out.write("                    ");
-      if (_jspx_meth_c_forEach_1(_jspx_page_context))
-        return;
-      out.write("\r\n");
-      out.write("                </div>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </div>\r\n");
-      out.write("                                \r\n");
-      out.write("\r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
-      out.write('\r');
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<div class=\"container-fluid\">\n");
+      out.write("        <div class=\"container d-flex\">\n");
+      out.write("            <div class=\"col-md-5\">\n");
+      out.write("                <img class=\"w-100\" src=\"img/product-1.png\" alt=\"\">\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"col-md-7\">\n");
+      out.write("                <h2>RELX Waka Smash Aloe Grape 6000 Hơi - Vape Pod Dùng 1 Lần Sạc Được</h2>\n");
+      out.write("                <p>- Sản phẩm sở hữu cho bản thân mình một loại công thức đặc biệt đã được nghiên cứu và kiểm chứng tại\n");
+      out.write("                    Thái Lan trong suốt nhiều năm dài.\n");
+      out.write("                </p>\n");
+      out.write("                <p>- Công thức này là sự tổng hợp của 3 nhóm Omega 3-6-9. Đây là 3 nhóm Omega mà cơ thể của cún cưng\n");
+      out.write("                    không thể tự tổng hợp, cũng như không thể được đưa vào từ các loại thực phẩm thông thường.</p>\n");
+      out.write("                <p>- Hơn nữa, Omega 3-6-9 còn giúp cải thiện sức khỏe mắt và sức chịu đựng, tính bền trong các tế bào,\n");
+      out.write("                    mô cơ của cún cưng. Giúp xương của cún chắc khỏe hơn, cơ bắp có sức chịu đựng cao hơn.</p>\n");
+      out.write("                <h6>Thương hiệu: <a href=\"\">Rlex</a></h6>\n");
+      out.write("                <div class=\"d-flex\">\n");
+      out.write("                    <h4 class=\"mb-3 pb-3\">đ</h4>\n");
+      out.write("                    <h1>260.000</h1>\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"d-flex\">\n");
+      out.write("                    <h6 class=\"align-self-center mb-0\">Đánh giá sản phẩm: </h6>\n");
+      out.write("                <div class=\"rate align-self-auto\">\n");
+      out.write("                    <input type=\"radio\" id=\"star5\" name=\"rate\" value=\"5\" />\n");
+      out.write("                    <label for=\"star5\" title=\"text\">5 stars</label>\n");
+      out.write("                    <input type=\"radio\" id=\"star4\" name=\"rate\" value=\"4\" />\n");
+      out.write("                    <label for=\"star4\" title=\"text\">4 stars</label>\n");
+      out.write("                    <input type=\"radio\" id=\"star3\" name=\"rate\" value=\"3\" />\n");
+      out.write("                    <label for=\"star3\" title=\"text\">3 stars</label>\n");
+      out.write("                    <input type=\"radio\" id=\"star2\" name=\"rate\" value=\"2\" />\n");
+      out.write("                    <label for=\"star2\" title=\"text\">2 stars</label>\n");
+      out.write("                    <input type=\"radio\" id=\"star1\" name=\"rate\" value=\"1\" />\n");
+      out.write("                    <label for=\"star1\" title=\"text\">1 star</label>\n");
+      out.write("                </div>\n");
+      out.write("                </div>\n");
+      out.write("                <div><i class=\"\"></i> Vận chuyển tới: <select class=\"form-select w-25\" name=\"\" id=\"\">\n");
+      out.write("                        <option value=\"hcm\">TP.Hồ Chí Minh</option>\n");
+      out.write("                        <option value=\"dn\">Đà Nẵng</option>\n");
+      out.write("                        <option value=\"hn\">Hà Nội</option>\n");
+      out.write("                    </select>\n");
+      out.write("                </div>\n");
+      out.write("                <hr>\n");
+      out.write("\n");
+      out.write("                <form action=\"\">\n");
+      out.write("                    <div>\n");
+      out.write("                        <div class=\"shopee-input-quantity\">\n");
+      out.write("                            <input type=\"button\" class=\"sub-sl shopee-button-outline\" title=\"Bớt\"\n");
+      out.write("                                onclick=\"var qty_el = document.getElementById('qty'); var qty = qty_el.value; if( !isNaN( qty )) qty_el.value--;return false;\">\n");
+      out.write("\n");
+      out.write("                            <input aria-label=\"Number\" name=\"quantity\" id=\"qty\" type=\"text\" size=\"1\"\n");
+      out.write("                                class=\"soluong_12 shopee-button-outline shopee-button-outline-mid\" value=\"1\">\n");
+      out.write("                            <input type=\"button\" class=\"add-sl shopee-button-outline\" title=\"Thêm\"\n");
+      out.write("                                onclick=\"var qty_el = document.getElementById('qty'); var qty = qty_el.value; if( !isNaN( qty )) qty_el.value++;return false;\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"buttons\">\n");
+      out.write("                        <div>\n");
+      out.write("                            <input class=\"btn btn-primary\" type=\"submit\" value=\"Thêm vào giỏ hàng\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </form>\n");
+      out.write("            </div>\n");
+      out.write("\n");
+      out.write("        </div>\n");
+      out.write("    </div>\n");
       out.write('\n');
       out.write("\r\n");
       out.write("\r\n");
@@ -327,9 +328,6 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</body>\r\n");
       out.write("\r\n");
       out.write("</html>\r\n");
-      out.write("\r\n");
-      out.write("    \r\n");
-      out.write("    \r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -405,112 +403,6 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
-    return false;
-  }
-
-  private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setVar("food");
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${listFood}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
-      if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\r\n");
-          out.write("                        <div class=\"pb-5 col-md-3\">\r\n");
-          out.write("                            <div class=\"product-item position-relative bg-light d-flex flex-column text-center\">\r\n");
-          out.write("                                <img class=\"img-fluid mb-4 w-100\" src=\"../img/Pet/");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${food.productId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(".jpg\" alt=\"\">\r\n");
-          out.write("                                <h6 class=\"text-uppercase\">");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${food.productName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</h6>\r\n");
-          out.write("                                <h5 class=\"text-primary mb-0\">");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${food.productPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</h5>\r\n");
-          out.write("                                <div class=\"btn-action d-flex justify-content-center\">\r\n");
-          out.write("                                    <a class=\"btn btn-primary py-2 px-3\" href=\"\"><i class=\"bi bi-cart\"></i></a>\r\n");
-          out.write("                                    <a class=\"btn btn-primary py-2 px-3\" href=\"\"><i class=\"bi bi-eye\"></i></a>\r\n");
-          out.write("                                </div>\r\n");
-          out.write("                            </div>\r\n");
-          out.write("                        </div>    \r\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_0.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_1.setParent(null);
-    _jspx_th_c_forEach_1.setVar("pet");
-    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${listPet}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
-      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\r\n");
-          out.write("                        <div class=\"pb-5 col-md-3\">\r\n");
-          out.write("                            <div class=\"product-item position-relative bg-light d-flex flex-column text-center\">\r\n");
-          out.write("                                <img class=\"img-fluid mb-4 w-100\" src=\"../img/Pet/");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pet.productId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(".jpg\" alt=\"\">\r\n");
-          out.write("                                <h6 class=\"text-uppercase\">");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pet.productName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</h6>\r\n");
-          out.write("                                <h5 class=\"text-primary mb-0\">");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pet.productPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</h5>\r\n");
-          out.write("                                <div class=\"btn-action d-flex justify-content-center\">\r\n");
-          out.write("                                    <a class=\"btn btn-primary py-2 px-3\" href=\"\"><i class=\"bi bi-cart\"></i></a>\r\n");
-          out.write("                                    <a class=\"btn btn-primary py-2 px-3\" href=\"\"><i class=\"bi bi-eye\"></i></a>\r\n");
-          out.write("                                </div>\r\n");
-          out.write("                            </div>\r\n");
-          out.write("                        </div>    \r\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_1.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
-    }
     return false;
   }
 }

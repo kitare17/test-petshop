@@ -1,10 +1,10 @@
 /********** Template CSS **********/
-:root {
+/*:root {
     --primary: #7AB730;
     --secondary: #FFD33C;
     --light: #F3F3F3;
     --dark: #212121;
-}
+}*/
 
 [class^=flaticon-]:before,
 [class*=" flaticon-"]:before,
@@ -456,3 +456,103 @@
 .blog-item a:hover i::after {
     width: 50px;
 }
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+
+
+.shopee-input-quantity {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.shopee-button-outline {
+  outline: 0;
+  cursor: pointer;
+  border: 0;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  transition: background-color .1s cubic-bezier(.4,0,.6,1);
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 2px;
+  background: transparent;
+  color: #7AB730;
+}
+.add-sl {
+  background: url(https://etoy.vn/images/input-previou.png) no-repeat scroll center center #fffefe!important;
+  height: 32px;
+  width: 30px;
+  border: 1;
+  box-shadow: none;
+  margin-left: -1px;
+}
+.sub-sl {
+  background: url(https://etoy.vn/images/input-next.png) no-repeat scroll center center #fffefe!important;
+  float: left;
+  height: 32px;
+  margin: 0;
+  width: 30px;
+  border: 1;
+  box-shadow: none;
+  margin-right: -1px;
+}
+
+
+/* ------------Cart------------ */
