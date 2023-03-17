@@ -108,6 +108,50 @@ public class ProductRepository {
         }
         return listFood;
     }
+    public static Pet getPet(String id ) {
+        try {
+            String query = "select * from tblPet where PetID = ? ";
+            Connection con = DBConnect.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, id);
+            ResultSet results = stmt.executeQuery();
+            while (results.next()) {
+               String productId = results.getString(1);
+                String productName = results.getString(2);
+                String petColor = results.getString(3);
+                String productType = results.getString(4);
+                double productPrice = results.getDouble(5);
+                int productAmount = results.getInt(6);
+                Pet pet = new Pet(productId, productName, productType, productPrice, productAmount, petColor);
+                return pet;
+            }
+            }catch(Exception e) {
+            System.out.println("Loi method GetPet() trong ProductRepository.java ");
+        }
+        return null;
+    }
+    public static Food getFood(String id ) {
+        try {
+            String query = "select * from tblFood where FoodID = ? ";
+            Connection con = DBConnect.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, id);
+            ResultSet results = stmt.executeQuery();
+            while (results.next()) {
+                String productId = results.getString(1);
+                String productName = results.getString(2);
+                String productType = results.getString(3);
+                double productPrice = results.getDouble(4);
+                int productAmount = results.getInt(5);
+                Food food = new Food(productId, productName, productType, productPrice, productAmount);
+                return food;
+            }
+        }catch(Exception e) {
+            System.out.println("Loi method GetFood() trong ProductRepository.java ");
+        }
+        return null;
+    }
+
 
     public static void main(String[] args) {
 //                ArrayList<Pet> listPet = listPet();

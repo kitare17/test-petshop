@@ -27,8 +27,8 @@
                                 <h6 class="text-uppercase">${pet.productName}</h6>
                                 <h5 class="text-primary mb-0">${pet.productPrice}</h5>
                                 <div class="btn-action d-flex justify-content-center">
-                                    <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                                    <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
+                                    <a class="btn btn-primary py-2 px-3" href="getpetdetail?id=${pet.productId}"><i class="bi bi-cart"></i></a>
+                                    <a class="btn btn-primary py-2 px-3" href="getpetdetail?id=${pet.productId}"><i class="bi bi-eye"></i></a>
                                 </div>
                             </div>
                         </div>    

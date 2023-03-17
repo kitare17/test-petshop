@@ -39,8 +39,8 @@
                                 <h6 class="text-uppercase">${food.productName}</h6>
                                 <h5 class="text-primary mb-0">${food.productPrice}</h5>
                                 <div class="btn-action d-flex justify-content-center">
-                                    <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                                    <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
+                                    <a class="btn btn-primary py-2 px-3" href="getfooddetail?id=${food.productId}"><i class="bi bi-cart"></i></a>
+                                    <a class="btn btn-primary py-2 px-3" href="getfooddetail?id=${food.productId}"><i class="bi bi-eye"></i></a>
                                 </div>
                             </div>
                         </div>    
