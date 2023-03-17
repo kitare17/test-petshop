@@ -160,7 +160,7 @@
             </div>
             <hr>
 
-            <form action="">
+            <form action="additem">
                 <div>
                     <div class="shopee-input-quantity">
                         <input type="button" class="sub-sl shopee-button-outline" title="Bớt"
@@ -170,7 +170,7 @@
                                            qty_el.value--;
                                        return false;">
 
-                        <input aria-label="Number" name="quantity" id="qty" type="text" size="1"
+                        <input aria-label="Number" name="ammount" id="qty" type="text" size="1"
                                class="soluong_12 shopee-button-outline shopee-button-outline-mid" value="1">
                         <input type="button" class="add-sl shopee-button-outline" title="Thêm"
                                onclick="var qty_el = document.getElementById('qty');
@@ -182,8 +182,10 @@
                 </div>
                 <div class="buttons">
                     <div>
+                        <input name ="id" type = "text" hidden="" value = "${product.productId}">
                         <input class="btn btn-primary" type="submit" value="Thêm vào giỏ hàng">
                     </div>
+                        <h3>${message}</h3>
                 </div>
             </form>
         </div>
