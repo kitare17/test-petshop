@@ -25,7 +25,7 @@
         </div>
         --%>
 
-        <div class="container-fluid border-bottom d-none d-lg-block">
+        <div class="container-fluid border-bottom d-none d-lg-block pt-5">
             <div class="container">
                 <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
                     <h6 class="text-primary text-uppercase">Pet's Food</h6>
