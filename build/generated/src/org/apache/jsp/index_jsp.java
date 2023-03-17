@@ -74,9 +74,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        <!-- Favicon -->\r\n");
       out.write("        <link href=\"img/favicon.ico\" rel=\"icon\">\r\n");
-      out.write("\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.15.4/css/all.css\">\r\n");
       out.write("        <!-- Google Web Fonts -->\r\n");
-      out.write("        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">\r\n");
+      out.write("        <!--        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">-->\r\n");
       out.write("        <link href=\"https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap\" rel=\"stylesheet\">  \r\n");
       out.write("\r\n");
       out.write("        <!-- Icon Font Stylesheet -->\r\n");
@@ -141,7 +141,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <a href=\"index.jsp\" class=\"nav-item nav-link active\">Home</a>\r\n");
       out.write("                    <a href=\"about.jsp\" class=\"nav-item nav-link\">About</a>\r\n");
       out.write("                    <a href=\"service.jsp\" class=\"nav-item nav-link\">Service</a>\r\n");
-      out.write("                    <a href=\"product.jsp\" class=\"nav-item nav-link\">Product</a>\r\n");
+      out.write("                    <a href=\"product\" class=\"nav-item nav-link\">Product</a>\r\n");
       out.write("                    <div class=\"nav-item dropdown\">\r\n");
       out.write("                        <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Pages</a>\r\n");
       out.write("                        <div class=\"dropdown-menu m-0\">\r\n");
@@ -154,7 +154,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("                    ");
+      out.write("                        ");
       if (_jspx_meth_c_if_1(_jspx_page_context))
         return;
       out.write("    \r\n");
@@ -746,17 +746,17 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                    <div class=\"nav-item dropdown\">\r\n");
-        out.write("                        <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">");
+        out.write("                        <div class=\"nav-item dropdown\">\r\n");
+        out.write("                            <a href=\"#\" class=\"nav-link dropdown-toggle bg-primary text-white px-5 ms-lg-5\" data-bs-toggle=\"dropdown\">");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.user.userName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("</a>\r\n");
-        out.write("                        <div class=\"dropdown-menu m-0\">\r\n");
-        out.write("                            <a href=\"testmonial.jsp\" class=\"dropdown-item\">Testimonial</a>\r\n");
-        out.write("                            <a href=\"blog.jsp\" class=\"dropdown-item\">Blog Grid</a>\r\n");
-        out.write("                            <a href=\"detail.jsp\" class=\"dropdown-item\">Blog Detail</a>\r\n");
+        out.write("                            <div class=\"dropdown-menu m-0\">\r\n");
+        out.write("                                <a href=\"inforUser.jsp\" class=\"dropdown-item\">Your information</a>\r\n");
+        out.write("                                <a href=\"#\" class=\"dropdown-item\">Your cart</a>\r\n");
+        out.write("                                <a href=\"#\" class=\"dropdown-item text-danger\">Log out</a>\r\n");
+        out.write("                            </div>\r\n");
         out.write("                        </div>\r\n");
-        out.write("                    </div>\r\n");
-        out.write("                        ");
+        out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;

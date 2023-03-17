@@ -84,7 +84,7 @@
                     <a href="index.jsp" class="nav-item nav-link active">Home</a>
                     <a href="about.jsp" class="nav-item nav-link">About</a>
                     <a href="service.jsp" class="nav-item nav-link">Service</a>
-                    <a href="product.jsp" class="nav-item nav-link">Product</a>
+                    <a href="product" class="nav-item nav-link">Product</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">

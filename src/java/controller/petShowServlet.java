@@ -21,8 +21,8 @@ import model.service.ProductService;
  *
  * @author PC
  */
-@WebServlet(name = "productShowServlet", urlPatterns = {"/product"})
-public class productShowServlet extends HttpServlet {
+@WebServlet(name = "petShowServlet", urlPatterns = {"/pet"})
+public class petShowServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +41,10 @@ public class productShowServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet productShowServlet</title>");
+            out.println("<title>Servlet petShowServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet productShowServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet petShowServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,19 +62,39 @@ public class productShowServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setCharacterEncoding("UTF-8");
+             response.setCharacterEncoding("UTF-8");
         ArrayList<Pet> listPet = ProductService.listPet();
-        ArrayList<Food> listFood = ProductService.listFood();
         ArrayList<Pet> subListPet = new ArrayList<Pet>();
-        ArrayList<Food> subListFood = new  ArrayList<Food>();
-        for(int i=0;i<4;i++){
-            subListFood.add(listFood.get(i));
-            subListPet.add(listPet.get(i));
-        }
-        request.setAttribute("listPet", subListPet);
-        request.setAttribute("listFood", subListFood);
+        int size=listPet.size();//get size
+		int amountPet=8;//amount on page
+		int maxPage=(size%amountPet==0)?size/amountPet:size/amountPet+1;
+		int pageAmount=5;
+		int page;
+		try {
+			if(request.getParameter("page").equals("fisrt")) page =1;
+			else if(request.getParameter("page").equals("last")) page =maxPage;
+			else page=Integer.parseInt(request.getParameter("page"));
+		} catch (Exception e) {
+			page=1;
+		}
+		
+		System.out.println(page+" "+size);
+		
+		
+		int realAmountPet=(page*amountPet>size)?size:page*amountPet;//set amount user if exceed real size
+		System.out.println(realAmountPet);
+		for(int i=page*amountPet-amountPet;i<realAmountPet;i++) {
+			subListPet.add(listPet.get(i));
+		System.out.println(i);
+		}
+		request.setAttribute("listPet", subListPet);
+		
+		request.setAttribute("page", page);
+		request.setAttribute("maxPage", maxPage);
+		request.getRequestDispatcher("pet.jsp").forward(request, response);
+        
 
-        request.getRequestDispatcher("product.jsp").forward(request, response);
+      
     }
 
     /**
@@ -88,7 +108,7 @@ public class productShowServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        processRequest(request, response);
     }
 
     /**
