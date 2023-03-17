@@ -17,9 +17,9 @@
 
         <!-- Favicon -->
         <link href="img/favicon.ico" rel="icon">
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
         <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <!--        <link rel="preconnect" href="https://fonts.gstatic.com">-->
         <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
 
         <!-- Icon Font Stylesheet -->
@@ -84,7 +84,7 @@
                     <a href="index.jsp" class="nav-item nav-link active">Home</a>
                     <a href="about.jsp" class="nav-item nav-link">About</a>
                     <a href="service.jsp" class="nav-item nav-link">Service</a>
-                    <a href="product.jsp" class="nav-item nav-link">Product</a>
+                    <a href="product" class="nav-item nav-link">Product</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
@@ -96,16 +96,16 @@
                     <c:if test="${sessionScope.user==null}">
                         <a href="login.jsp" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Log in <i class="bi bi-arrow-right"></i></a>
                         </c:if>
-                    <c:if test="${sessionScope.user!=null}">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle bg-primary text-white px-5 ms-lg-5" data-bs-toggle="dropdown">${sessionScope.user.userName}</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="inforUser.jsp" class="dropdown-item">Your information</a>
-                            <a href="#" class="dropdown-item">Your cart</a>
-                            <a href="#" class="dropdown-item text-danger">Log out</a>
+                        <c:if test="${sessionScope.user!=null}">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle bg-primary text-white px-5 ms-lg-5" data-bs-toggle="dropdown">${sessionScope.user.userName}</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="inforUser.jsp" class="dropdown-item">Your information</a>
+                                <a href="#" class="dropdown-item">Your cart</a>
+                                <a href="logout" class="dropdown-item text-danger">Log out</a>
+                            </div>
                         </div>
-                    </div>
-                        </c:if>    
+                    </c:if>    
                 </div>
             </div>
         </nav>

@@ -23,9 +23,9 @@
             <br>
             <input type="submit" value="change">
         </form>
-            -->
-            
-            <div class="container-fluid pt-5">
+-->
+
+<div class="container-fluid pt-5">
     <div class="container">
         <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
             <h6 class="text-primary text-uppercase">Contact Us</h6>
@@ -39,24 +39,32 @@
                         <div class="col-12">
                             <input type="hidden" name ="username" minlength="7" maxlength="50" required pattern="[a-zA-Z0-9]+" class="form-control bg-light border-0 px-4" placeholder="User Name" value="${sessionScope.user.userName}" style="height: 55px;">
                         </div>
+                        <p>Password</p>
                         <div class="col-12">
                             <input type="password" minlength="7" maxlength="50" name ="password" id="password" class="form-control bg-light border-0 px-4" placeholder="Password" style="height: 55px;" value="${sessionScope.user.userPass}" required>
                         </div>
+                        <p>Password confirm</p>
+
                         <div class="col-12">
                             <input type="password" minlength="7" maxlength="50" name ="confirmPassword" id="confirm-password" class="form-control bg-light border-0 px-4" placeholder="Confirm Password" style="height: 55px;" value="${sessionScope.user.userPass}" required>
                         </div>
+                        <p>Full name</p>
                         <div class="col-12">
                             <input type="text" name ="fullName" class="form-control bg-light border-0 px-4" placeholder="Full Name" style="height: 55px;" value="${sessionScope.user.userFullName}" required>
                         </div>
+                        <p>Phone</p>
                         <div class="col-12">
                             <input type="number" name ="age" class="form-control bg-light border-0 px-4" placeholder="Age" min="10" max="100" style="height: 55px;" value="${sessionScope.user.userAge}" required>
                         </div>
+                        <p>Email</p>
                         <div class="col-12">
                             <input type="email" name ="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;" value="${sessionScope.user.userEmail}" required>
                         </div>
+                        <p>Phone</p>
                         <div class="col-12">
                             <input type="tel" maxlength="10" minlength="10" required pattern="[0-9]{10}" name = "phone" class="form-control bg-light border-0 px-4" placeholder="Phone number" style="height: 55px;" value="${sessionScope.user.userPhone}" required>
                         </div>
+                        <p>Address</p>
                         <div class="col-12">
                             <input type="text" name ="address" class="form-control bg-light border-0 px-4" placeholder="Address" style="height: 55px;" value="${sessionScope.user.userAdress}" required>
                         </div>
@@ -105,7 +113,7 @@
             var password = document.getElementById("password").value;
             var confirmPassword = document.getElementById("confirm-password").value;
 
-            if (password!==confirmPassword) {
+            if (password !== confirmPassword) {
                 alert("Mật khẩu nhập lại không khớp!");
                 return false;
             }

@@ -1,0 +1,29 @@
+SMAP
+product_002ddetail_jsp.java
+JSP
+*S JSP
+*F
++ 0 product-detail.jsp
+product-detail.jsp
++ 1 header.jsp
+include/header.jsp
++ 2 product-detail-form.jsp
+include/product-detail-form.jsp
++ 3 footer.jsp
+include/footer.jsp
+*L
+5,5:61
+5#1,92:65
+96:349,8
+97,2:357
+98,2:159
+99:377,8
+100:385
+101:386,3
+102,7:389
+108,5:163
+9#0:167
+5#2,69:168
+10#0:236
+5#3,95:237
+*E

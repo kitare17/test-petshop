@@ -1,0 +1,16 @@
+SMAP
+food_005fform_jsp.java
+JSP
+*S JSP
+*F
++ 0 food_form.jsp
+include/food_form.jsp
+*L
+5,14:54
+26,10:68
+35:105,11
+36,2:116
+38,3:118,3
+41,7:127
+47,8:80
+*E

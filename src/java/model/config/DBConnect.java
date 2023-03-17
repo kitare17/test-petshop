@@ -30,6 +30,11 @@ public interface DBConnect {
     public static String userID = "sa";
     public static String password = "123456789";
 //Bao
+//    public static String serverName = "ADMIN";
+//    public static String dbName = "PetshopDB";
+//    public static String portNumber = "1433";
+//    public static String userID = "sa";
+//    public static String password = "sa";
     //
     public static Connection getConnection() {
         try {
