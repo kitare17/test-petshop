@@ -53,6 +53,7 @@ public class AddItemServlet extends HttpServlet {
             request.setAttribute("product", p);
             request.setAttribute("message", "Thêm sản phẩm thành công");
             response.setCharacterEncoding("UTF-8");
+//            session.setAttribute("cart", cart);
             request.getRequestDispatcher("product-detail.jsp").forward(request, response);
         } catch (Exception e) {
             System.out.println("=============>Loi AdditemServlet <===============");

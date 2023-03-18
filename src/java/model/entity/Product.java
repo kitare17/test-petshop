@@ -1,16 +1,20 @@
 package model.entity;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author quang
  */
 public class Product {
-    
+
+    DecimalFormat formatter = new DecimalFormat("#,###,###");
     protected String productId;
     protected String productName;
     protected String productType;
     protected double productPrice;
     protected int productAmount;
+
     public Product() {
     }
 
@@ -30,7 +34,10 @@ public class Product {
         this.productAmount = productAmount;
     }
 
-   
+    public String getPriceString() {
+        return formatter.format(productPrice);
+
+    }
 
     public String getProductId() {
         return productId;
@@ -69,10 +76,4 @@ public class Product {
         return "Product{" + "productId=" + productId + ", productName=" + productName + ", productType=" + productType + ", productPrice=" + productPrice + ", productAmount=" + productAmount + '}';
     }
 
-    
-
- 
-  
-   
-    
 }

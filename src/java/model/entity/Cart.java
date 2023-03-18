@@ -1,5 +1,6 @@
 package model.entity;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,8 @@ import java.util.List;
  */
 public class Cart {
     private List<Items> cart;
+    DecimalFormat formatter = new DecimalFormat("#,###,###");
+
 
     public Cart() {
         cart = new ArrayList<>();
@@ -27,5 +30,17 @@ public class Cart {
             tong += item.getPrice();
         }
         return tong;
-    } 
+    }
+    public String getThanhTienString() {
+        return formatter.format(getThanhTien());
+
+    }
+    public List<Items> getCart() {
+        return cart;
+    }
+
+//    public void setCart(List<Items> cart) {
+//        this.cart = cart;
+//    }
+   
 }

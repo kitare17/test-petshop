@@ -119,8 +119,7 @@
 <div class="container-fluid">
     <div class="container d-flex">
         <div class="col-md-5">
-            <img class="w-100" src="img/Pet/${product.productId}.jpg" alt="">
-            <img class="w-100" src="img/Food/${product.productId}.png" alt="">
+            <img class="w-100" src="img/product/${product.productId}.jpg" alt="">
         </div>
         <div class="col-md-7">
 
@@ -135,7 +134,7 @@
             <h6>Thương hiệu: <a href="">Rlex</a></h6>
             <div class="d-flex">
                 <h4 class="mb-3 pb-3">đ</h4>
-                 <h1>${product.productPrice}</h1>
+                 <h1>${product.getPriceString()}</h1>
             </div>
             <div class="d-flex">
                 <h6 class="align-self-center mb-0">Đánh giá sản phẩm: </h6>

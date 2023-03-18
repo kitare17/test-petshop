@@ -1,5 +1,7 @@
 package model.entity;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author quang
@@ -7,6 +9,7 @@ package model.entity;
 public class Items {
     private Product product;
     private int ammout;
+    DecimalFormat formatter = new DecimalFormat("#,###,###");
 
     public Items() {
     }
@@ -34,5 +37,9 @@ public class Items {
 
     public double getPrice() {
         return product.getProductPrice() * ammout;
+    }
+    public String getPriceString() {
+        return formatter.format(getPrice());
+
     }
 }

@@ -4,6 +4,7 @@
     Author     : Admin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div class="cart-page">
@@ -212,97 +213,29 @@ img {
                                         <th>Remove</th>
                                     </tr>
                                 </thead>
+       
                                 <tbody class="align-middle">
+                                    
+                                    <c:forEach var="item" items="${sessionScope.cart.cart}">
                                     <tr>
                                         <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-1.png" alt="Image"></a>
-                                                <p>Product Name</p>
+                                            <div class="img">   
+                                                <img src="img/product/${item.product.productId}.jpg" alt="Image">
+                                                <p>${item.product.productName}</p>
                                             </div>
                                         </td>
-                                        <td>$99</td>
+                                        <td>${item.product.getPriceString()} </td>
                                         <td>
                                             <div class="qty">
                                                 <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
+                                                <input type="text" value="${item.ammout}">
                                                 <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                             </div>
                                         </td>
-                                        <td>$99</td>
+                                        <td>${item.getPriceString()}</td>
                                         <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-1.png" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-1.png" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-1.png" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input class="quantity-input" type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img">
-                                                <a href="#"><img src="img/product-1.png" alt="Image"></a>
-                                                <p>Product Name</p>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td>
-                                            <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>$99</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
-                                    </tr>
+                                    </tr>                                                                       
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -321,9 +254,9 @@ img {
                                 <div class="cart-summary">
                                     <div class="cart-content">
                                         <h1>Cart Summary</h1>
-                                        <p>Sub Total<span>$99</span></p>
-                                        <p>Shipping Cost<span>$1</span></p>
-                                        <h2>Grand Total<span>$100</span></h2>
+                                        <p>Sub Total<span>${sessionScope.cart.getThanhTienString()}</span></p>
+                                        <p>Shipping Cost<span>1</span></p>
+                                        <h2>Grand Total<span>${sessionScope.cart.getThanhTienString()}</span></h2>
                                     </div>
                                     <div class="cart-btn">
                                         <button>Update Cart</button>

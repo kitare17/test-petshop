@@ -101,7 +101,7 @@
                             <a href="#" class="nav-link dropdown-toggle bg-primary text-white px-5 ms-lg-5" data-bs-toggle="dropdown">${sessionScope.user.userName}</a>
                             <div class="dropdown-menu m-0">
                                 <a href="inforUser.jsp" class="dropdown-item">Your information</a>
-                                <a href="#" class="dropdown-item">Your cart</a>
+                                <a href="cart.jsp" class="dropdown-item">Your cart</a>
                                 <a href="logout" class="dropdown-item text-danger">Log out</a>
                             </div>
                         </div>

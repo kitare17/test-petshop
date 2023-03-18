@@ -35,9 +35,9 @@
                     <c:forEach var="food" items="${listFood}">
                         <div class="pb-5 mb-4 col-md-3">
                             <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                                <img class="img-fluid mb-4 w-100" src="img/Food/${food.productId}.png" alt="">
+                                <img class="img-fluid mb-4 w-100" src="img/product/${food.productId}.jpg" alt="">
                                 <h6 class="text-uppercase">${food.productName}</h6>
-                                <h5 class="text-primary mb-0">${food.productPrice}</h5>
+                                <h5 class="text-primary mb-0">${food.getPriceString()}</h5>
                                 <div class="btn-action d-flex justify-content-center">
                                     <a class="btn btn-primary py-2 px-3" href="getfooddetail?id=${food.productId}"><i class="bi bi-cart"></i></a>
                                     <a class="btn btn-primary py-2 px-3" href="getfooddetail?id=${food.productId}"><i class="bi bi-eye"></i></a>
