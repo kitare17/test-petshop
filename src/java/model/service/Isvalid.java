@@ -1,5 +1,7 @@
 package model.service;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
 
 /**
@@ -37,4 +39,9 @@ public class Isvalid {
         Pattern pattern = Pattern.compile(usernameRegex);
         return pattern.matcher(username).matches();
     }
+    public static String getCurrentDate() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.format(new Date());
+    }
+
 }
