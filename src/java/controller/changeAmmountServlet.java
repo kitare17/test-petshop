@@ -9,16 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.entity.Cart;
-import model.entity.Items;
-import model.entity.Product;
-import model.repository.ProductRepository;
 
 /**
  *
  * @author quang
  */
-@WebServlet(name = "AddItemServlet", urlPatterns = {"/additem"})
-public class AddItemServlet extends HttpServlet {
+@WebServlet(name = "changeAmmountServlet", urlPatterns = {"/changeammount"})
+public class changeAmmountServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,32 +28,20 @@ public class AddItemServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
-        try {
-            String id = request.getParameter("id");
-            String ammout = request.getParameter("ammount");
-            Product p = null;
-            if (id.contains("P")) {
-                p = ProductRepository.getPet(id);
-            } else if (id.contains("F")) {
-                p = ProductRepository.getFood(id);
+        HttpSession session = request.getSession();
+        Cart cart = (Cart) session.getAttribute("cart");
 
-            } else {
-                System.out.println("=============>Loi if else check matching <===============");
-            }
-            HttpSession session = request.getSession();
-            Cart cart = (Cart) session.getAttribute("cart");
-            Items item = new Items(p, Integer.parseInt(ammout));
-            System.out.println(cart.addItems(item));
-            System.out.println(cart);
-            request.setAttribute("product", p);
-            request.setAttribute("message", "Thêm sản phẩm thành công");
-            response.setCharacterEncoding("UTF-8");
-//            session.setAttribute("cart", cart);
-            request.getRequestDispatcher("product-detail.jsp").forward(request, response);
-        } catch (Exception e) {
-            System.out.println("=============>Loi AdditemServlet <===============");
+        String increase = request.getParameter("increase");
+        String decrease = request.getParameter("decrease");
+        String delete = request.getParameter("delete");
+        if (increase != null) {
+            System.out.println(cart.increaseAmmount(increase));
+        } else if (decrease != null) {
+            System.out.println(cart.decreaseAmmount(decrease));
+        } else if (delete != null) {
+            System.out.println(cart.removeItem(delete));
         }
+        request.getRequestDispatcher("cart.jsp").forward(request, response);
 
     }
 

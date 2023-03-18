@@ -1,6 +1,7 @@
 package model.entity;
 
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 /**
  *
@@ -42,4 +43,12 @@ public class Items {
         return formatter.format(getPrice());
 
     }
+
+    public boolean equal(Items item) {
+        if (this.product.productId.compareToIgnoreCase(item.product.productId) == 0) {
+            return true;
+        }
+        return false;
+    }
+    
 }

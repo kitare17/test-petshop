@@ -227,13 +227,24 @@ img {
                                         <td>${item.product.getPriceString()} </td>
                                         <td>
                                             <div class="qty">
-                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                <form action = "changeammount">
+                                                    <input name ="decrease" value = "${item.product.productId}" type = "hidden">
+                                                <button type ="submit"  class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                </form>
                                                 <input type="text" value="${item.ammout}">
-                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                <form action = "changeammount">
+                                                <input name ="increase" value = "${item.product.productId}" type = "hidden">
+                                                <button class="btn-plus" href = ""><i class="fa fa-plus"></i></button>
+                                                </form>
                                             </div>
                                         </td>
                                         <td>${item.getPriceString()}</td>
-                                        <td><button><i class="fa fa-trash"></i></button></td>
+                                        <td>
+                                            <form action = "changeammount">
+                                                <input name ="delete" value = "${item.product.productId}" type = "hidden">
+                                                <button type = "submit"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                        </td>
                                     </tr>                                                                       
                                     </c:forEach>
                                 </tbody>
@@ -254,9 +265,9 @@ img {
                                 <div class="cart-summary">
                                     <div class="cart-content">
                                         <h1>Cart Summary</h1>
-                                        <p>Sub Total<span>${sessionScope.cart.getThanhTienString()}</span></p>
-                                        <p>Shipping Cost<span>1</span></p>
-                                        <h2>Grand Total<span>${sessionScope.cart.getThanhTienString()}</span></h2>
+                                        <p>Sub Total<span>${sessionScope.cart.getThanhTienString(0)}</span></p>
+                                        <p>Shipping Cost<span>30000</span></p>
+                                        <h2>Grand Total<span>${sessionScope.cart.getThanhTienString(30000)}</span></h2>
                                     </div>
                                     <div class="cart-btn">
                                         <button>Update Cart</button>
