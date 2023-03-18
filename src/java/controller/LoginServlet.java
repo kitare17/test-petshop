@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -81,6 +82,12 @@ public class LoginServlet extends HttpServlet {
         User user=UserService.checkLogin(username, password);
         System.out.println(user);
         if(user!=null){
+            Cookie userCookies=new Cookie("username", username);
+            Cookie passCookies=new Cookie("password", password);
+            userCookies.setMaxAge(60*60*24);
+            passCookies.setMaxAge(60*60*24);
+           response.addCookie(userCookies);
+           response.addCookie(passCookies);
             HttpSession session=request.getSession();
             session.setAttribute("user", user);
             session.setAttribute("cart", new Cart());

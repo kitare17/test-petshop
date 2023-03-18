@@ -82,11 +82,11 @@
                 <form action="login" method="post" class="login" >
                     <label class="khung-user">
                         <div class=""></div>
-                        <input name="username" class="username" type="text" autocomplete="on" placeholder="User name" />
+                        <input name="username" class="username" type="text" autocomplete="on" placeholder="User name" value="${cookie.username.value}" />
                     </label>
                     <label class="khung-pass">
                         <div class=""></div>
-                        <input name="password" class="password" type="password" autocomplete="off" placeholder="Password" />
+                        <input name="password" class="password" type="password" autocomplete="off" placeholder="Password" value="${cookie.password.value}" />
                     </label>
                     <label>
                         <input type="submit" value="Login" class="login-button">

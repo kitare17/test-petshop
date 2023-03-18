@@ -32,6 +32,11 @@ public class AddItemServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        response.setContentType("text/html;charset=UTF-8");
+            HttpSession session = request.getSession();
+         if(session.getAttribute("user")==null) {
+             request.setAttribute("thongbao", "Vui lòng đăng nhập để sử dụng dịch vụ");
+         request.getRequestDispatcher("login.jsp").forward(request, response);
+         }
         try {
             String id = request.getParameter("id");
             String ammout = request.getParameter("ammount");
@@ -44,7 +49,6 @@ public class AddItemServlet extends HttpServlet {
             } else {
                 System.out.println("=============>Loi if else check matching <===============");
             }
-            HttpSession session = request.getSession();
             Cart cart = (Cart) session.getAttribute("cart");
             Items item = new Items(p, Integer.parseInt(ammout));
             System.out.println(cart.addItems(item));

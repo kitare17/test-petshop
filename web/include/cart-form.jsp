@@ -197,6 +197,11 @@ img {
   background-color: white;
   border: 1px solid #7AB730;
 }
+
+
+<c:if test="${sessionScope.user==null}">
+    <% response.sendRedirect("login.jsp"); %>
+</c:if>
     </style>
         <div class="container-fluid">
             <div class="row">
