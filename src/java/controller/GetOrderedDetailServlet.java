@@ -1,23 +1,24 @@
 package controller;
 
+import com.sun.tools.javac.util.ArrayUtils;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.entity.Cart;
-import model.entity.User;
+import model.entity.Items;
 import model.repository.OrderRepository;
 
 /**
  *
  * @author quang
  */
-@WebServlet(name = "makeOrderServlet", urlPatterns = {"/makeoder"})
-public class makeOrderServlet extends HttpServlet {
+@WebServlet(name = "GetOrderedDetail", urlPatterns = {"/getordereddetail"})
+public class GetOrderedDetailServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,13 +32,16 @@ public class makeOrderServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-        Cart cart = (Cart) session.getAttribute("cart");
-        String orderId = OrderRepository.createOrder(cart,user);
-        cart.removeAll();
-        request.getRequestDispatcher("getordereddetail?orderId="+orderId).forward(request, response);
-        
+        String orderId = request.getParameter("orderId");
+        Cart orderedCart = new Cart();
+        ArrayList<Items> ordered = OrderRepository.getOrder(orderId);
+        String orderStatus = OrderRepository.getOrderStatus(orderId);
+        orderedCart.setCart(ordered);
+        request.setAttribute("orderId", orderId);
+        request.setAttribute("orderStatus", orderStatus);
+        request.setAttribute("orderedCart", orderedCart);
+        request.getRequestDispatcher("ordered.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

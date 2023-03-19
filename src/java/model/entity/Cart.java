@@ -12,9 +12,43 @@ public class Cart {
 
     private List<Items> cart;
     DecimalFormat formatter = new DecimalFormat("#,###,###");
+    private String orderedId;
+    private String orderStatus;
+    private String date;
+public void removeAll(){
+    cart.clear();
+}
+    public String getOrderedId() {
+        return orderedId;
+    }
 
+    public void setOrderedId(String orderedId) {
+        this.orderedId = orderedId;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+    
+    
     public Cart() {
         cart = new ArrayList<>();
+    }
+
+    public void setCart(List<Items> cart) {
+        this.cart.addAll(cart);
     }
     
     
