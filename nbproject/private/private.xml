@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/controller/GetOrderedDetailServlet.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/web/include/ordered-form.jsp</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/entity/Product.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/web/include/order-history-form.jsp</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/web/include/cart-form.jsp</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/controller/makeOrderServlet.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/entity/Items.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/web/include/header.jsp</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/entity/User.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/entity/Cart.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/model/repository/OrderRepository.java</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/web/include/pet_form.jsp</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/web/orderhistory.jsp</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/web/ordered.jsp</file>
-            <file>file:/D:/one/petshop/Final-Project-PRJ301-PetShop/src/java/controller/GetOrderHistory.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
