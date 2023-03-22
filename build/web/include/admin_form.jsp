@@ -197,7 +197,7 @@
                                 <td>${i.productPrice}</td>
                                 <td>${i.productAmount}</td>
                                 <td><img class="w-25" src="img/blog-2.jpg" alt=""></td>
-                                <td><a class="btn btn-danger m-0" href="">Delete</a></td>
+                                <td><a class="btn btn-danger m-0" href="removeproduct?id=${i.productId}">Delete</a></td>
                             </tr>
 
                         </c:forEach>
@@ -249,7 +249,7 @@
                                 <td>${i.productPrice}</td>
                                 <td>${i.productAmount}</td>
                                 <td><img class="w-25" src="img/blog-2.jpg" alt=""></td>
-                                <td><a class="btn btn-danger m-0" href="">Delete</a></td>
+                                <td><a class="btn btn-danger m-0" href="removeproduct?id=${i.productId}">Delete</a></td>
                             </tr>
 
                         </c:forEach>
