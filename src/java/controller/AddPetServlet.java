@@ -5,22 +5,31 @@
  */
 package controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Random;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import model.entity.Food;
 import model.entity.Pet;
 import model.repository.AdminRepository;
+import model.repository.ProductRepository;
 
 /**
  *
  * @author PC
  */
 @WebServlet(name = "AddPetServlet", urlPatterns = {"/addpet"})
+
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 100, // 2MB
+        maxFileSize = 1024 * 1024 * 100, // 10MB
+        maxRequestSize = 1024 * 1024 * 100) // 50MB
 public class AddPetServlet extends HttpServlet {
 
     /**
@@ -75,7 +84,8 @@ public class AddPetServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String productId= request.getParameter("productId");
+            response.setCharacterEncoding("UTF-8");
+        String productId= ramdomID();
         String productName= request.getParameter("productName");
         String productType= request.getParameter("productType");
         double productPrice= Double.parseDouble(request.getParameter("productPrice")) ;
@@ -83,11 +93,51 @@ public class AddPetServlet extends HttpServlet {
         String petColor= request.getParameter("petColor");
         Pet newPet=new Pet(productId, productName, productType, productPrice, productAmount, petColor);
         System.out.println(newPet);
-        
         AdminRepository.addPet(newPet);
+           String savePath = "web\\img\\product";
+        String appPath = getLink( request.getServletContext().getRealPath(""));
+        File f = new File(appPath+savePath);
+        for (Part part : request.getParts()) {
+            System.out.println(part.getHeader("content-disposition"));
+            if (!part.getHeader("content-disposition").contains("filename")) {
+                continue;
+            }
+
+            String fileName = productId + ".jpg";
+
+            if (fileName != null && fileName.length() > 0) {
+                String filePath = appPath+savePath + File.separator + fileName;
+                part.write(filePath);
+            }
+
+        }
         response.sendRedirect("admin.jsp");
     }
+private static String ramdomID() {
+        String petID = "P";
+        Random rd = new Random();
 
+        do {
+
+            int random = rd.nextInt(10000);
+            if (random > 999) {
+                petID = petID + random;
+            } else if (random > 99) {
+                petID = petID + "0" + random;
+            } else if (random > 9) {
+                petID = petID + "00" + random;
+            } else {
+                petID = petID + "000" + random;
+            }
+
+        } while (ProductRepository.getPet(petID) != null);
+
+        return petID;
+    }
+
+    String getLink(String s) {
+     return s.substring(0,s.lastIndexOf("build"));
+    }
     /**
      * Returns a short description of the servlet.
      *

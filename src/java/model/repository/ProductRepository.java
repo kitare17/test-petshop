@@ -146,6 +146,7 @@ public class ProductRepository {
                 Food food = new Food(productId, productName, productType, productPrice, productAmount);
                 return food;
             }
+            con.close();
         }catch(Exception e) {
             System.out.println("Loi method GetFood() trong ProductRepository.java ");
         }

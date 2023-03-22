@@ -5,21 +5,29 @@
  */
 package controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Random;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import model.entity.Food;
 import model.repository.AdminRepository;
+import model.repository.ProductRepository;
 
 /**
  *
  * @author PC
  */
 @WebServlet(name = "AddFoodServlet", urlPatterns = {"/addfood"})
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 100, // 2MB
+        maxFileSize = 1024 * 1024 * 100, // 10MB
+        maxRequestSize = 1024 * 1024 * 100) // 50MB
 public class AddFoodServlet extends HttpServlet {
 
     /**
@@ -66,7 +74,7 @@ public class AddFoodServlet extends HttpServlet {
 //    private String productType;
 //    private double productPrice;
 //productAmount       f
-       
+
     }
 
     /**
@@ -80,16 +88,64 @@ public class AddFoodServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String productId= request.getParameter("productId");
-        String productName= request.getParameter("productName");
-        String productType= request.getParameter("productType");
-        double productPrice= Double.parseDouble(request.getParameter("productPrice")) ;
-        int productAmount=Integer.parseInt(request.getParameter("productAmount")) ;
-        Food newFood=new Food(productId, productName, productType, productPrice, productAmount);
-        System.out.println(newFood);
+       // request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        String productId = ramdomID();
+        String productName = request.getParameter("productName");
+        String productType = request.getParameter("productType");
+        double productPrice = Double.parseDouble(request.getParameter("productPrice"));
+        int productAmount = Integer.parseInt(request.getParameter("productAmount"));
+        Food newFood = new Food(productId, productName, productType, productPrice, productAmount);
+        // System.out.println(newFood);
+        
+      
         AdminRepository.addFood(newFood);
-        response.sendRedirect("admin.jsp");
+        
+        //addfile
+          String savePath = "web\\img\\product";
+        String appPath = getLink( request.getServletContext().getRealPath(""));
+        File f = new File(appPath+savePath);
+        for (Part part : request.getParts()) {
+            System.out.println(part.getHeader("content-disposition"));
+            if (!part.getHeader("content-disposition").contains("filename")) {
+                continue;
+            }
 
+            String fileName = productId + ".jpg";
+
+            if (fileName != null && fileName.length() > 0) {
+                String filePath = appPath+savePath + File.separator + fileName;
+                part.write(filePath);
+            }
+
+        }
+         response.sendRedirect("admin.jsp");
+    }
+
+    private static String ramdomID() {
+        String foodID = "F";
+        Random rd = new Random();
+
+        do {
+
+            int random = rd.nextInt(10000);
+            if (random > 999) {
+                foodID = foodID + random;
+            } else if (random > 99) {
+                foodID = foodID + "0" + random;
+            } else if (random > 9) {
+                foodID = foodID + "00" + random;
+            } else {
+                foodID = foodID + "000" + random;
+            }
+
+        } while (ProductRepository.getFood(foodID) != null);
+
+        return foodID;
+    }
+
+    String getLink(String s) {
+     return s.substring(0,s.lastIndexOf("build"));
     }
 
     /**

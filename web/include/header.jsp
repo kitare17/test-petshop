@@ -20,7 +20,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="img/favicon.ico" rel="icon">
-        
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
         <!-- Google Web Fonts -->
         <!--        <link rel="preconnect" href="https://fonts.gstatic.com">-->
@@ -108,12 +108,15 @@
                             <a href="#" class="nav-link dropdown-toggle bg-primary text-white px-5 ms-lg-5" data-bs-toggle="dropdown">${sessionScope.user.userName}</a>
                             <div class="dropdown-menu m-0">
                                 <a href="inforUser.jsp" class="dropdown-item">Your information</a>
-                                <a href="admin.jsp" class="dropdown-item">Admin</a>
-                                <a href="cart.jsp" class="dropdown-item">Your cart</a>
-                                <a href="getorderhistory" class="dropdown-item">History order</a>
-                                <a href="logout" class="dropdown-item text-danger">Log out</a>
+                                <c:if test="${sessionScope.user.userRole.equals('admin')}">
+                                    <a href="admin.jsp" class="dropdown-item">Admin</a>
+                                </c:if>
+
+                                    <a href="cart.jsp" class="dropdown-item">Your cart</a>
+                                    <a href="getorderhistory" class="dropdown-item">History order</a>
+                                    <a href="logout" class="dropdown-item text-danger">Log out</a>
+                                </div>
                             </div>
-                        </div>
                     </c:if>    
                 </div>
             </div>

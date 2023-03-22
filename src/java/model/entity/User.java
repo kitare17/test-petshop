@@ -29,7 +29,16 @@ public class User {
         this.userAdress = userAdress;
         this.userRole = "user";
     }
-
+  public User(String userName, String userPass, String userFullName, int userAge, String userEmail, String userPhone, String userAdress, String userRole) {
+        this.userName = userName;
+        this.userPass = userPass;
+        this.userFullName = userFullName;
+        this.userAge = userAge;
+        this.userEmail = userEmail;
+        this.userPhone = userPhone;
+        this.userAdress = userAdress;
+        this.userRole = userRole;
+    }
     public String getUserName() {
         return userName;
     }

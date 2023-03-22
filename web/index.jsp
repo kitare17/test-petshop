@@ -3,7 +3,7 @@
     Created on : Feb 18, 2023, 11:58:28 AM
     Author     : Admin
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="include/header.jsp" %>
     <!-- Hero Start -->
     <div class="container-fluid bg-primary py-5 mb-5 hero-header">
@@ -12,11 +12,11 @@
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="display-1 text-uppercase text-dark mb-lg-4">Pet Shop</h1>
                     <h1 class="text-uppercase text-white mb-lg-4">Make Your Pets Happy</h1>
-                    <p class="fs-4 text-white mb-lg-4">Dolore tempor clita lorem rebum kasd eirmod dolore diam eos kasd. Kasd clita ea justo est sed kasd erat clita sea</p>
+                    <p class="fs-4 text-white mb-lg-4">Chuỗi cửa hàng thú cưng với chất lượng và uy tín hàng đầu miền Trung. Chuyên cung cấp dịch vụ và các sản phẩm đồ ăn cho thú cưng của bạn</p>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
                         <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            data-src="https://www.youtube.com/watch?v=xMz3P4_kYFM" data-bs-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Play Video</h5>
@@ -63,7 +63,7 @@
                         <h6 class="text-primary text-uppercase">About Us</h6>
                         <h1 class="display-5 text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
                     </div>
-                    <h4 class="text-body mb-4">Diam dolor diam ipsum tempor sit. Clita erat ipsum et lorem stet no labore lorem sit clita duo justo magna dolore</h4>
+                    <h4 class="text-body mb-4">Với đội ngũ nhân viên chuyên nghiệp của công ty, được đào tạo qua trường lớp và đặc biệt yêu nghề.</h4>
                     <div class="bg-light p-4">
                         <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item w-50" role="presentation">
@@ -79,10 +79,10 @@
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
-                                <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                                <p class="mb-0">Với sứ mệnh mang đến cho khách hàng những sản phẩm và dịch vụ tốt nhất để chăm sóc và nuôi dưỡng thú cưng của khách hàng. Chúng tôi hiểu rằng thú cưng là một phần quan trọng trong gia đình của bạn, và chúng tôi cam kết cung cấp cho bạn những sản phẩm và dịch vụ chất lượng cao nhất để đảm bảo sức khỏe và hạnh phúc của thú cưng của bạn. Chúng tôi luôn đổi mới và cập nhật sản phẩm của mình để đáp ứng nhu cầu của khách hàng và luôn sẵn sàng hỗ trợ và tư vấn cho khách hàng trong việc chăm sóc thú cưng của mình.</p>
                             </div>
                             <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
-                                <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                                <p class="mb-0">Chúng tôi muốn mang lại niềm vui và hạnh phúc cho các thú cưng và chủ nuôi của họ bằng cách cung cấp cho họ những sản phẩm và dịch vụ tốt nhất. Chúng tôi luôn đầu tư và nghiên cứu để mang đến những sản phẩm mới và độc đáo, và đồng thời cải thiện dịch vụ để đáp ứng được nhu cầu đa dạng của khách hàng</p>
                             </div>
                         </div>
                     </div>
@@ -105,8 +105,8 @@
                     <div class="service-item bg-light d-flex p-4">
                         <i class="flaticon-house display-1 text-primary me-4"></i>
                         <div>
-                            <h5 class="text-uppercase mb-3">Pet Boarding</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+                            <h5 class="text-uppercase mb-3">Trông giữ thú cưng</h5>
+                            <p>Chăm sóc và trông giữ thú cưng của bạn khi bạn có việc bận</p>
                             <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
@@ -115,8 +115,8 @@
                     <div class="service-item bg-light d-flex p-4">
                         <i class="flaticon-food display-1 text-primary me-4"></i>
                         <div>
-                            <h5 class="text-uppercase mb-3">Pet Feeding</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+                            <h5 class="text-uppercase mb-3">Cho thú cưng ăn</h5>
+                            <p>Nhận làm công thức thức ăn dành riêng cho thú cưng của bạn</p>
                             <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
@@ -125,8 +125,8 @@
                     <div class="service-item bg-light d-flex p-4">
                         <i class="flaticon-grooming display-1 text-primary me-4"></i>
                         <div>
-                            <h5 class="text-uppercase mb-3">Pet Grooming</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+                            <h5 class="text-uppercase mb-3">Cắt tỉa lông</h5>
+                            <p>Chăm sóc ngoài hình và chải chuốt lông cho thú cưng của bạn</p>
                             <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
@@ -135,8 +135,8 @@
                     <div class="service-item bg-light d-flex p-4">
                         <i class="flaticon-cat display-1 text-primary me-4"></i>
                         <div>
-                            <h5 class="text-uppercase mb-3">Pet Training</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+                            <h5 class="text-uppercase mb-3">Huấn luyện thú cưng</h5>
+                            <p>Giúp thú cưng của bạn đi vệ sinh đúng chỗ,ăn ngủ đúng giờ giấc,thực hiện theo mệnh lệnh</p>
                             <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
@@ -145,8 +145,8 @@
                     <div class="service-item bg-light d-flex p-4">
                         <i class="flaticon-dog display-1 text-primary me-4"></i>
                         <div>
-                            <h5 class="text-uppercase mb-3">Pet Exercise</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+                            <h5 class="text-uppercase mb-3">Chụp hình cho thú cưng</h5>
+                            <p>Giúp bạn lưu giữ những hình ảnh và kỷ niệm với thú cưng của bạn</p>
                             <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
@@ -155,8 +155,8 @@
                     <div class="service-item bg-light d-flex p-4">
                         <i class="flaticon-vaccine display-1 text-primary me-4"></i>
                         <div>
-                            <h5 class="text-uppercase mb-3">Pet Treatment</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+                            <h5 class="text-uppercase mb-3">Chăm sóc sức khỏe</h5>
+                            <p>Tiêm phòng và chữa trị các loại bệnh phổ biến mà thú cưng thường mắc phải</p>
                             <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
@@ -175,61 +175,20 @@
                 <h1 class="display-5 text-uppercase mb-0">Products For Your Best Friends</h1>
             </div>
             <div class="owl-carousel product-carousel">
+                <%-- o day ne--%>
+                <c:forEach var="food" items="${listFood}">
                 <div class="pb-5">
                     <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-1.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
+                        <img class="img-fluid mb-4" src="img/product/${food.productId}.jpg" alt="">
+                        <h6 class="text-uppercase">${food.productName}</h6>
+                        <h5 class="text-primary mb-0">${food.getPriceString()}</h5>
                         <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
+                            <a class="btn btn-primary py-2 px-3" href="getfooddetail?id=${food.productId}"><i class="bi bi-cart"></i></a>
+                            <a class="btn btn-primary py-2 px-3" href="getfooddetail?id=${food.productId}"><i class="bi bi-eye"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-2.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-3.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-4.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-2.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
         </div>
     </div>
@@ -243,9 +202,9 @@
                 <div class="col-lg-7">
                     <div class="border-start border-5 border-dark ps-5 mb-5">
                         <h6 class="text-dark text-uppercase">Special Offer</h6>
-                        <h1 class="display-5 text-uppercase text-white mb-0">Save 50% on all items your first order</h1>
+                        <h1 class="display-5 text-uppercase text-white mb-0">Giảm 50% cho khách hàng đầu tiên sử dụng dịch vụ chăm sóc thú cưng</h1>
                     </div>
-                    <p class="text-white mb-4">Eirmod sed tempor lorem ut dolores sit kasd ipsum. Dolor ea et dolore et at sea ea at dolor justo ipsum duo rebum sea. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo lorem. Elitr ut dolores magna sit. Sea dolore sed et.</p>
+                    <p class="text-white mb-4">Khách hàng đầu tiên sử dụng dịch vụ sẽ được giảm giá 50% trên tổng hóa đơn, mang đến cho các chủ nuôi thú cưng một cơ hội tuyệt vời để trải nghiệm và đánh giá chất lượng dịch vụ.</p>
                     <a href="" class="btn btn-light py-md-3 px-md-5 me-3">Shop Now</a>
                     <a href="" class="btn btn-outline-light py-md-3 px-md-5">Read More</a>
                 </div>
@@ -256,6 +215,7 @@
 
 
     <!-- Team Start -->
+    <%--
     <div class="container-fluid py-5">
         <div class="container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
@@ -346,6 +306,7 @@
             </div>
         </div>
     </div>
+    --%>
     <!-- Team End -->
 
 
@@ -362,10 +323,10 @@
                                     <i class="bi bi-chat-square-quote text-primary"></i>
                                 </div>
                             </div>
-                            <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat. Erat dolor rebum sit ipsum.</p>
+                            <p>Tôi rất hài lòng với dịch vụ của cửa hàng thú cưng này. Khi đến đây, tôi luôn được đón tiếp nhiệt tình và thân thiện bởi nhân viên của cửa hàng. Họ rất chuyên nghiệp và luôn tư vấn cho tôi những sản phẩm và dịch vụ phù hợp với thú cưng của tôi</p>
                             <hr class="w-25 mx-auto">
-                            <h5 class="text-uppercase">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="text-uppercase">Nguyễn Ngọc Nhân</h5>
+                            <span>Khách hàng</span>
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-4">
@@ -374,10 +335,10 @@
                                     <i class="bi bi-chat-square-quote text-primary"></i>
                                 </div>
                             </div>
-                            <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat. Erat dolor rebum sit ipsum.</p>
+                            <p> Tôi hoàn toàn tin tưởng vào sản phẩm và dịch vụ của cửa hàng này, vì chúng tôi đã cùng nhau trải qua nhiều năm và thấy rõ sự chăm sóc đặc biệt và tình cảm mà nhân viên dành cho thú cưng của tôi. Tôi chắc chắn sẽ tiếp tục đến đây để mua sắm và chăm sóc cho thú cưng của mình.</p>
                             <hr class="w-25 mx-auto">
-                            <h5 class="text-uppercase">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="text-uppercase">Nguyễn Phước Minh Hiếu</h5>
+                            <span>Khách hàng</span>
                         </div>
                     </div>
                 </div>
@@ -404,12 +365,12 @@
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
+                                        <small class="me-3"><i class="bi bi-bookmarks me-2"></i>PetCare</small>
                                         <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
                                     </div>
-                                    <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                    <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                    <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                                    <h5 class="text-uppercase mb-3">Cần làm gì khi cún bị chảy máu cam</h5>
+                                    <p>Chảy máu cam, thường xảy ra trên cún hơn mèo, được định nghĩa là chảy máu cấp tính từ lỗ mũi hoặc vòm họng. Nguyên…</p>
+                                    <a class="text-primary text-uppercase" href="https://petcare.vn/can-lam-gi-khi-cun-bi-chay-mau-cam/">Read More<i class="bi bi-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -424,12 +385,12 @@
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
+                                        <small class="me-3"><i class="bi bi-bookmarks me-2"></i>PetCare</small>
                                         <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
                                     </div>
-                                    <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                    <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                    <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                                    <h5 class="text-uppercase mb-3">Sỏi bàng quang – bệnh ở những chú chó ngoan</h5>
+                                    <p>Hẳn một số chủ nuôi sẽ ngạc nhiên khi biết trên thú cưng cũng có bệnh lý sỏi bàng quang. Thật vậy, tuy tuổi đời…</p>
+                                    <a class="text-primary text-uppercase" href="https://petcare.vn/soi-bang-quang-benh-o-nhung-chu-cho-ngoan/">Read More<i class="bi bi-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>

@@ -7,6 +7,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+
+ <c:if test="${!sessionScope.user.userRole.equals('admin')}">
+     <% response.sendRedirect("index.jsp"); %>
+                                </c:if>
 <jsp:useBean class="model.repository.AdminRepository" scope="page" id="show"></jsp:useBean>
 
     <div class="container-fluid pt-5 ">
@@ -74,7 +78,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="addfood" method="post" >
+                <form action="addfood" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
                     <div class="mb-3">
                         <label for="fid" class="col-form-label">Food ID:</label>
                         <input type="text" class="form-control" id="fid" name="productId">
@@ -97,7 +101,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="fpic" class="col-form-label">Food Picture:</label>
-                        <input type="file" class="form-control" id="fpic">
+                        <input type="file" class="form-control" id="fpic" name="file">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -122,7 +126,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="addpet" method="post">
+                <form action="addpet" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
                     <div class="mb-3">
                         <label for="id" class="col-form-label">Pet ID:</label>
                         <input type="text" class="form-control" id="id" name="productId" >
@@ -149,7 +153,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="pic" class="col-form-label">Pet Picture:</label>
-                        <input type="file" class="form-control" id="pic">
+                        <input type="file" class="form-control" id="pic" name="file">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

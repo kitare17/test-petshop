@@ -28,7 +28,7 @@
                     data: [
                         {
                             label: "Jan",
-                            value: 40
+                            value: ${100}
                         },
                         {
                             label: "Feb",
