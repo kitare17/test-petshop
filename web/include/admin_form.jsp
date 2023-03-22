@@ -56,15 +56,11 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex">
-            <div class="col-md-6" id="column-chart"></div>
-            <div class="col-md-6" id="spline-chart"></div>
-        </div>
-        <div class="mt-5">
-            <div id="donut-chart"></div>
-        </div>
     </div>
 </div>
+
+
+
 
 
 <!-- Thêm Food -->
@@ -205,7 +201,7 @@
                             </tr>
 
                         </c:forEach>
-                        
+
                     </tbody>
                 </table>
 
@@ -285,21 +281,22 @@
                 <table class="table" style="width: 100%;">
                     <thead class="thead-dark w-100">
                     <td style="padding-left:5px;">Mã đơn hàng</td>
-                    <td>Ngày mua</td>
-                    <td>Sản phẩm</td>
+                    <td>Người mua</td>
+                    <td>Ngày đặt</td>
+                    <td>Mã giảm giá</td>
                     <td>Tổng tiền</td>
                     <td>Tình trạng</td>
                     </thead>
                     <tbody class="w-100">
                         <tr>
                             <td>P0001</td>
-                            <td>12/12/1212</td>
-                            <td>dog</td>
+                            <td>Romeo Juliet</td>
+                            <td>12/12/2023</td>
+                            <td>deas54qwda</td>
                             <td>15000000</td>
-                            <td>Good</td>
-                            <td><a class="btn btn-primary m-0" href="">Accept</a></td>
-                            <td><a class="btn btn-dark m-0" href="">Denny</a></td>
-                            <td><a class="btn btn-danger m-0" href="">Delete</a></td>
+                            <td>Đang xử lý</td>
+                            <td><a class="btn btn-primary m-0" href="">Duyệt</a></td>
+                            <td><a class="btn btn-danger m-0" href="">Hủy</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -344,14 +341,14 @@
     }
 </style>
 
-<!-- JavaScript Libraries -->
+<!-- JavaScript Libraries 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="lib/easing/easing.min.js"></script>
 <script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script> 
+<script src="lib/owlcarousel/owl.carousel.min.js"></script> -->
 
-<!-- Template Javascript -->
+<!-- Template Javascript 
 <script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -361,192 +358,4 @@ crossorigin="anonymous"></script>
 crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-crossorigin="anonymous"></script>
-<script>
-    pluscharts.draw({
-        drawOn: '#column-chart',
-        type: "column",
-        dataset: {
-            data: [
-                {
-                    label: "Jan",
-                    value: 40
-                },
-                {
-                    label: "Feb",
-                    value: 50
-                },
-                {
-                    label: "Mar",
-                    value: 60
-                },
-                {
-                    label: "Apr",
-                    value: 70
-                },
-                {
-                    label: "May",
-                    value: 80
-                }
-            ],
-            backgroundColor: "#5d62b4", //can be array or single color
-            borderColor: "#5d62b4",
-            borderWidth: 0,
-            legendLabel: "Registers"
-        },
-        options: {
-            barPadding: .65,
-            barWidth: 15,
-            text: {
-                display: false,
-                color: "#6c478c"
-            },
-            axes: {
-                x: {
-                    display: true,
-                    min: 0,
-                    max: 100
-                },
-                y: {
-                    display: true,
-                    min: 0,
-                    max: 100
-                }
-            },
-            legends: {
-                display: true,
-                width: 20,
-                height: 20
-            },
-            size: {
-                width: '400', //give 'container' if you want width and height of initiated container
-                height: '400'
-            }
-        }
-    });
-
-
-    pluscharts.draw({
-        drawOn: "#spline-chart",
-        type: "spline",
-        dataset: {
-            data: [
-                {
-                    label: 10,
-                    value: 20
-                },
-                {
-                    label: 20,
-                    value: 50
-                },
-                {
-                    label: 30,
-                    value: 30
-                },
-                {
-                    label: 40,
-                    value: 10
-                },
-                {
-                    label: 50,
-                    value: 100
-                },
-                {
-                    label: 60,
-                    value: 60
-                },
-                {
-                    label: 70,
-                    value: 80
-                },
-                {
-                    label: 80,
-                    value: 50
-                },
-                {
-                    label: 100,
-                    value: 70
-                }
-            ],
-            lineColor: "#ef5958",
-            lineWidth: 2,
-            legendLabel: "visitors"
-        },
-        options: {
-            text: {
-                display: false,
-                color: "#6c478c"
-            },
-            points: {
-                display: true,
-                radius: 3
-            },
-            axes: {
-                x: {
-                    display: true,
-                    scale: 3,
-                    min: 0,
-                    max: 100
-                },
-                y: {
-                    display: true,
-                    scale: 3,
-                    min: 0,
-                    max: 100
-                }
-            },
-            legends: {
-                display: true,
-                width: 20,
-                height: 20
-            },
-            size: {
-                width: '400', //give 'container' if you want width and height of initiated container
-                height: '400'
-            }
-        }
-    })
-    pluscharts.draw({
-        drawOn: "#donut-chart",
-        type: "donut",
-        dataset: {
-            data: [
-                {
-                    label: "IE",
-                    value: 70
-                },
-                {
-                    label: "Chrome",
-                    value: 50
-                },
-                {
-                    label: "Firefox",
-                    value: 30
-                },
-                {
-                    label: "Safari",
-                    value: 20
-                }
-            ],
-            backgroundColor: ["#fff09d", "#5d62b4", "#f9b5c2", "#04d59f"],
-            borderColor: "#ffffff",
-            borderWidth: 0,
-        },
-        options: {
-            width: 60,
-            text: {
-                display: false,
-                color: "#f6f6f6"
-            },
-            legends: {
-                display: true,
-                width: 20,
-                height: 20
-            },
-            size: {
-                width: '400', //give 'container' if you want width and height of initiated container
-                height: '400'
-            }
-        }
-    })
-</script>
+crossorigin="anonymous"></script>-->
