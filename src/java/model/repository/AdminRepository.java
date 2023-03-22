@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import model.config.DBConnect;
 import model.entity.Food;
+import model.entity.OrderAccept;
 import model.entity.Pet;
 import model.entity.Service;
 
@@ -29,6 +30,7 @@ public class AdminRepository {
             if (results.next()) {
                 return results.getInt(1);
             }
+            con.close();
         } catch (Exception e) {
             System.out.println("Loi method getAmountUser() trong AdminRepository .java ");
         }
@@ -36,18 +38,20 @@ public class AdminRepository {
     }
 
     public static int getCustomerOrder() {
+        int amount = 0;
         try {
             String query = "  select count( distinct UserName) from tblOrder";
             Connection con = DBConnect.getConnection();
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet results = stmt.executeQuery();
             if (results.next()) {
-                return results.getInt(1);
+                amount = results.getInt(1);
             }
+            con.close();
         } catch (Exception e) {
             System.out.println("Loi method getCustomerOrder() trong AdminRepository .java ");
         }
-        return 0;
+        return amount;
     }
 
     public static ArrayList<Pet> getAllPet() {
@@ -65,15 +69,16 @@ public class AdminRepository {
                 String productType = results.getString(4);
                 double productPrice = Double.parseDouble(results.getString(5));
                 int productAmount = Integer.parseInt(results.getString(6));
-                Pet pet=new Pet(productId, productName, productType, productPrice, productAmount, petColor);
+                Pet pet = new Pet(productId, productName, productType, productPrice, productAmount, petColor);
                 listPet.add(pet);
             }
-
+            con.close();
         } catch (Exception e) {
             System.out.println("Loi method getAllPet() trong AdminRepository .java ");
         }
         return listPet;
     }
+
     public static ArrayList<Food> getAllFood() {
         ArrayList<Food> listFood = null;
         try {
@@ -88,10 +93,10 @@ public class AdminRepository {
                 String productType = results.getString(3);
                 double productPrice = Double.parseDouble(results.getString(4));
                 int productAmount = Integer.parseInt(results.getString(5));
-                Food food =new Food(productId, productName, productType, productPrice, productAmount);
+                Food food = new Food(productId, productName, productType, productPrice, productAmount);
                 listFood.add(food);
             }
-
+            con.close();
         } catch (Exception e) {
             System.out.println("Loi method getAllFood() trong AdminRepository .java ");
         }
@@ -106,6 +111,8 @@ public class AdminRepository {
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, idProduct);
             stmt.executeUpdate();
+
+            con.close();
             return true;
         } catch (Exception e) {
             System.out.println("Loi method removeProduct(String idProduct) trong ProductRepository.java ");
@@ -129,6 +136,7 @@ public class AdminRepository {
             stmt.setDouble(5, pet.getProductPrice());
             stmt.setInt(6, pet.getProductAmount());
             stmt.executeUpdate();
+            con.close();
             return true;
         } catch (Exception e) {
             System.out.println("Loi method removeProduct(String idProduct) trong ProductRepository.java ");
@@ -151,6 +159,7 @@ public class AdminRepository {
             stmt.setDouble(4, food.getProductPrice());
             stmt.setInt(5, food.getProductAmount());
             stmt.executeUpdate();
+            con.close();
             return true;
         } catch (Exception e) {
             System.out.println("Loi method removeProduct(String idProduct) trong ProductRepository.java ");
@@ -169,6 +178,7 @@ public class AdminRepository {
             stmt.setString(2, service.getServiceName());
             stmt.setDouble(3, service.getServicePrice());
             stmt.executeUpdate();
+            con.close();
             return true;
         } catch (Exception e) {
             System.out.println("Loi method addService(Service service) trong ProductRepository.java ");
@@ -178,9 +188,90 @@ public class AdminRepository {
         return false;
     }
 
+    public static ArrayList<OrderAccept> getAllOrder() {
+        ArrayList<OrderAccept> list = null;
+        try {
+            Connection con = DBConnect.getConnection();
+            String query = "select x.OrderID,x.UserName,x.OrDate,x.DiscountID,x.OrderStatus,sum(x.total) as total\n"
+                    + "  from\n"
+                    + "  (\n"
+                    + "  (select od.OrderID,od.UserName,od.OrDate,od.DiscountID,od.OrderStatus,sum(dt.BuyAmount*f.FoodPrice) as total\n"
+                    + "  from tblOrder od\n"
+                    + "  join tblOrderDetail dt on od.OrderID=dt.OrderID \n"
+                    + "  join tblFood f on f.FoodID=dt.ProductID\n"
+                    + "  group by od.OrderID,od.UserName,od.OrDate,od.DiscountID,od.OrderStatus)\n"
+                    + "  union\n"
+                    + "  (\n"
+                    + "  select od.OrderID,od.UserName,od.OrDate,od.DiscountID,od.OrderStatus,sum(dt.BuyAmount*p.PetPrice) as total\n"
+                    + "  from tblOrder od\n"
+                    + "  join tblOrderDetail dt on od.OrderID=dt.OrderID \n"
+                    + "join tblPet p on p.PetID=dt.ProductID\n"
+                    + "  group by od.OrderID,od.UserName,od.OrDate,od.DiscountID,od.OrderStatus\n"
+                    + "  )\n"
+                    + "  union\n"
+                    + "  (\n"
+                    + "   select od.OrderID,od.UserName,od.OrDate,od.DiscountID,od.OrderStatus,sum(dt.BuyAmount*s.ServicePrice) as total\n"
+                    + "  from tblOrder od\n"
+                    + "  join tblOrderDetail dt on od.OrderID=dt.OrderID \n"
+                    + " join tblService s on s.ServiceID=dt.ProductID\n"
+                    + "  group by od.OrderID,od.UserName,od.OrDate,od.DiscountID,od.OrderStatus\n"
+                    + "  ))x\n"
+                    + "  group by x.OrderID,x.UserName,x.OrDate,x.DiscountID,x.OrderStatus ";
+            PreparedStatement stmt = con.prepareStatement(query);
+            ResultSet results = stmt.executeQuery();
+            list = new ArrayList<>();
+            while (results.next()) {
+                String idOrder = results.getString(1),
+                        username = results.getString(2),
+                        date = results.getString(3),
+                        discountId = results.getString(4),
+                        total = results.getString(6),
+                        orderStatus = results.getString(5);
+                OrderAccept od = new OrderAccept(idOrder, username, date, discountId, total, orderStatus);
+
+                list.add(od);
+
+            }
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Loi method getAllOrder trong AdminRepository.java ");
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
+    public static void acceptOrder(String id) {
+        try {
+            Connection con = DBConnect.getConnection();
+            String query = " update tblOrder set OrderStatus='Đã xác nhận' where tblOrder.OrderID=?";
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, id);
+            stmt.executeUpdate();
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Loi method acceptOrder(String id) trong AdminRepository.java");
+        }
+    }
+
+    public static void removeOrder(String id) {
+        try {
+            Connection con = DBConnect.getConnection();
+            String query = " delete tblOrderDetail  where tblOrderDetail.OrderID=?\n"
+                    + "delete tblOrder  where tblOrder.OrderID=?";
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, id);
+            stmt.setString(2, id);
+            stmt.executeUpdate();
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Loi method acceptOrder(String id) trong AdminRepository.java");
+        }
+    }
+
     public static void main(String[] args) {
-         ArrayList<Food> listPet=AdminRepository.getAllFood();
-        for (Food pet : listPet) {
+        ArrayList<OrderAccept> listPet = AdminRepository.getAllOrder();
+        for (OrderAccept pet : listPet) {
             System.out.println(pet);
         }
 

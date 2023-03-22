@@ -288,16 +288,20 @@
                     <td>Tình trạng</td>
                     </thead>
                     <tbody class="w-100">
-                        <tr>
-                            <td>P0001</td>
-                            <td>Romeo Juliet</td>
-                            <td>12/12/2023</td>
-                            <td>deas54qwda</td>
-                            <td>15000000</td>
-                            <td>Đang xử lý</td>
-                            <td><a class="btn btn-primary m-0" href="">Duyệt</a></td>
-                            <td><a class="btn btn-danger m-0" href="">Hủy</a></td>
-                        </tr>
+                        <c:forEach items="${show.getAllOrder()}" var="i">
+                            <tr>
+                                <td>${i.idOrder}</td>
+                                <td>${i.username}</td>
+                                <td>${i.date}</td>
+                                <td>${i.getDiscountId()==null?"Khong ma":"co ma"}</td>
+                                <td>${i.total}</td>
+                                <td>${i.orderStatus}</td>
+                                <td><a class="btn btn-primary m-0" href="acceptorder?id=${i.idOrder}">Duyệt</a></td>
+                                <td><a class="btn btn-danger m-0" href="removeorder?id=${i.idOrder}">Hủy</a></td>
+                            </tr>
+                        </c:forEach>
+
+                        
                     </tbody>
                 </table>
 
