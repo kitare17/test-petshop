@@ -117,8 +117,8 @@
 
 </style>
 <div class="container-fluid">
-    <div class="container d-flex">
-        <div class="col-md-5">
+    <div class="container d-flex justify-content-around">
+        <div class="col-md-4">
             <img class="w-100" src="img/product/${product.productId}.jpg" alt="">
         </div>
         <div class="col-md-7">

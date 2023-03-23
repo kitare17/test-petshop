@@ -231,7 +231,7 @@
                                         </td>
                                         <td>${item.product.getPriceString()} </td>
                                         <td>
-                                            <div class="qty">
+                                            <div class="qty d-flex">
                                                 <form action = "changeammount">
                                                     <input name ="decrease" value = "${item.product.productId}" type = "hidden">
                                                     <button type ="submit"  class="btn-minus"><i class="fa fa-minus"></i></button>
