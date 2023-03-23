@@ -74,7 +74,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Thêm Food</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -122,7 +122,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Thêm Pet</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -178,7 +178,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">List Food</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -200,7 +200,8 @@
                                 <td>${i.productType}</td>
                                 <td>${i.productPrice}</td>
                                 <td>${i.productAmount}</td>
-                                <td><img class="w-25" src="img/blog-2.jpg" alt=""></td>
+                                <td><img class="w-25" src="img/product/${i.productId}.jpg" alt=""></td>
+                                <td><a class="btn btn-primary m-0" href="#">Update</a></td>
                                 <td><a class="btn btn-danger m-0" href="removeproduct?id=${i.productId}">Delete</a></td>
                             </tr>
 
@@ -228,7 +229,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">List Pet</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -252,7 +253,8 @@
                                 <td>${i.productType}</td>
                                 <td>${i.productPrice}</td>
                                 <td>${i.productAmount}</td>
-                                <td><img class="w-25" src="img/blog-2.jpg" alt=""></td>
+                                <td><img class="w-25" src="img/product/${i.productId}.jpg" alt=""></td>
+                                <td><a class="btn btn-primary m-0" href="#">Update</a></td>
                                 <td><a class="btn btn-danger m-0" href="removeproduct?id=${i.productId}">Delete</a></td>
                             </tr>
 

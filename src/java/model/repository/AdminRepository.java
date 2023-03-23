@@ -274,8 +274,7 @@ public class AdminRepository {
         ArrayList<StatisticAge> list = null;
         try {
             Connection con = DBConnect.getConnection();
-            String query = " select MONTH(u.UserAge), COUNT(MONTH(u.UserAge)) from  tblUser u \n"
-                    + "group by MONTH(u.UserAge)";
+            String query = "select  u.UserAge, count(u.UserAge) from tblUser u group by u.UserAge";
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
             list = new ArrayList<>();
