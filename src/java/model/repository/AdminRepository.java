@@ -14,6 +14,7 @@ import model.entity.Food;
 import model.entity.OrderAccept;
 import model.entity.Pet;
 import model.entity.Service;
+import model.entity.StatisticAge;
 
 /**
  *
@@ -244,7 +245,7 @@ public class AdminRepository {
     public static void acceptOrder(String id) {
         try {
             Connection con = DBConnect.getConnection();
-            String query = " update tblOrder set OrderStatus='Đã xác nhận' where tblOrder.OrderID=?";
+            String query = " update tblOrder set OrderStatus=N'Đã xác nhận' where tblOrder.OrderID=?";
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, id);
             stmt.executeUpdate();
@@ -269,9 +270,51 @@ public class AdminRepository {
         }
     }
 
+    public static ArrayList<StatisticAge> getAllAge() {
+        ArrayList<StatisticAge> list = null;
+        try {
+            Connection con = DBConnect.getConnection();
+            String query = " select MONTH(u.UserAge), COUNT(MONTH(u.UserAge)) from  tblUser u \n"
+                    + "group by MONTH(u.UserAge)";
+            PreparedStatement stmt = con.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            list = new ArrayList<>();
+            while (rs.next()) {
+                list.add(new StatisticAge(rs.getInt(1), rs.getInt(2)));
+            }
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Loi method acceptOrder(String id) trong AdminRepository.java");
+        }
+        return list;
+    }
+
+    public static ArrayList<StatisticAge> getAllOrderMonth() {
+        ArrayList<StatisticAge> list = null;
+        try {
+            Connection con = DBConnect.getConnection();
+            String query = "  select MONTH(o.OrDate), COUNT(MONTH(o.OrDate)) from  tblOrder o \n"
+                    + "where o.OrderStatus!=N'Đang xử lí' and o.OrDate>='2023-01-01' and o.OrDate<='2023-12-30'\n"
+                    + "group by MONTH(o.OrDate)";
+            PreparedStatement stmt = con.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            list = new ArrayList<>();
+            while (rs.next()) {
+                list.add(new StatisticAge(rs.getInt(1), rs.getInt(2)));
+              
+            }
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Loi method acceptOrder(String id) trong AdminRepository.java");
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
-        ArrayList<OrderAccept> listPet = AdminRepository.getAllOrder();
-        for (OrderAccept pet : listPet) {
+        ArrayList<StatisticAge> listPet = AdminRepository.getAllOrderMonth();
+        for (StatisticAge pet : listPet) {
             System.out.println(pet);
         }
 

@@ -4,6 +4,7 @@
     Author     : Admin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,42 +16,31 @@
         <script src="dist/pluscharts.js"></script>
     </head>
     <body>
-
+        <jsp:useBean id="chart" scope="page" class="model.repository.AdminRepository"></jsp:useBean>
         <div class="d-flex">
             <div class="col-md-6" id="column-chart"></div>
             <div class="col-md-6" id="spline-chart"></div>
         </div>
         <script>
+            
             pluscharts.draw({
                 drawOn: '#column-chart',
                 type: "column",
                 dataset: {
                     data: [
-                        {
-                            label: "Jan",
-                            value: ${100}
-                        },
-                        {
-                            label: "Feb",
-                            value: 50
-                        },
-                        {
-                            label: "Mar",
-                            value: 60
-                        },
-                        {
-                            label: "Apr",
-                            value: 70
-                        },
-                        {
-                            label: "May",
-                            value: 80
-                        }
+                        
+        <c:forEach items="${chart.getAllAge()}" var="i" >
+                     {
+                            label: ${i.age},
+                            value: ${i.amount}
+                        },    
+        </c:forEach>
+                      
                     ],
                     backgroundColor: "#5d62b4", //can be array or single color
                     borderColor: "#5d62b4",
                     borderWidth: 0,
-                    legendLabel: "Registers"
+                    legendLabel: "Thống kê độ tuổi của người dùng"
                 },
                 options: {
                     barPadding: .65,
@@ -84,71 +74,40 @@
             });
 
 
-            pluscharts.draw({
-                drawOn: "#spline-chart",
-                type: "spline",
+           pluscharts.draw({
+                drawOn: '#column-chart',
+                type: "column",
                 dataset: {
                     data: [
-                        {
-                            label: 10,
-                            value: 20
-                        },
-                        {
-                            label: 20,
-                            value: 50
-                        },
-                        {
-                            label: 30,
-                            value: 30
-                        },
-                        {
-                            label: 40,
-                            value: 10
-                        },
-                        {
-                            label: 50,
-                            value: 100
-                        },
-                        {
-                            label: 60,
-                            value: 60
-                        },
-                        {
-                            label: 70,
-                            value: 80
-                        },
-                        {
-                            label: 80,
-                            value: 50
-                        },
-                        {
-                            label: 100,
-                            value: 70
-                        }
+                        
+        <c:forEach items="${chart.getAllOrderMonth()}" var="i"  >
+                     {
+                            label: ${i.age},
+                            value: ${i.amount}
+                        },    
+        </c:forEach>
+                      
                     ],
-                    lineColor: "#ef5958",
-                    lineWidth: 2,
-                    legendLabel: "visitors"
+                    backgroundColor: "#7AB730", //can be array or single color
+                    borderColor: "#7AB730",
+                    borderWidth: 0,
+                    legendLabel: "Doanh số bán hàng theo tháng trong năm 2023"
                 },
                 options: {
+                    barPadding: .65,
+                    barWidth: 15,
                     text: {
                         display: false,
-                        color: "#6c478c"
-                    },
-                    points: {
-                        display: true,
-                        radius: 3
+                        color: "#7AB730"
                     },
                     axes: {
                         x: {
                             display: true,
-                            scale: 3,
                             min: 0,
                             max: 100
                         },
                         y: {
                             display: true,
-                            scale: 3,
                             min: 0,
                             max: 100
                         }
