@@ -68,7 +68,7 @@
 
 
 <!-- Thêm Food -->
-<button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal"
+<button type="button" class="btn btn-primary m-2 col-md-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
         data-bs-whatever="@mdo">Thêm Food</button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -79,10 +79,6 @@
             </div>
             <div class="modal-body">
                 <form action="addfood" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
-                    <div class="mb-3">
-                        <label for="fid" class="col-form-label">Food ID:</label>
-                        <input type="text" class="form-control" id="fid" name="productId">
-                    </div>
                     <div class="mb-3">
                         <label for="fname" class="col-form-label">Food Name:</label>
                         <input type="text" class="form-control" id="fname" name="productName">
@@ -105,7 +101,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" >Send message</button>
+                        <button type="submit" class="btn btn-primary" >Add</button>
                     </div>
                 </form>
             </div>
@@ -116,7 +112,7 @@
 
 
 <!-- Thêm Pet -->
-<button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#addPet"
+<button type="button" class="btn btn-primary m-2 col-md-2" data-bs-toggle="modal" data-bs-target="#addPet"
         data-bs-whatever="@mdo">Thêm Pet</button>
 <div class="modal fade" id="addPet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -127,10 +123,6 @@
             </div>
             <div class="modal-body">
                 <form action="addpet" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
-                    <div class="mb-3">
-                        <label for="id" class="col-form-label">Pet ID:</label>
-                        <input type="text" class="form-control" id="id" name="productId" >
-                    </div>
                     <div class="mb-3">
                         <label for="name" class="col-form-label">Pet Name:</label>
                         <input type="text" class="form-control" id="name" name="productName">
@@ -157,7 +149,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Send message</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
                     </div>
                 </form>
             </div>
@@ -170,7 +162,7 @@
 <!-- ------List Food----- -->
 
 
-<button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#listFood">
+<button type="button" class="btn btn-primary m-2 col-md-2" data-bs-toggle="modal" data-bs-target="#listFood">
     List Food
 </button>
 
@@ -194,7 +186,7 @@
                     <tbody>
 
                         <c:forEach items="${show.getAllFood()}" var="i" >
-                            <tr>
+                            <tr id="row${i.productId}">
                                 <td>${i.productId}</td>
                                 <td>${i.productName}</td>
                                 <td>${i.productType}</td>
@@ -202,7 +194,7 @@
                                 <td>${i.productAmount}</td>
                                 <td><img class="w-25" src="img/product/${i.productId}.jpg" alt=""></td>
                                 <td><a class="btn btn-primary m-0" href="#">Update</a></td>
-                                <td><a class="btn btn-danger m-0" href="removeproduct?id=${i.productId}">Delete</a></td>
+                                <td><a class="btn btn-danger m-0" onclick="deletePro('${i.productId}')">Delete</a></td>
                             </tr>
 
                         </c:forEach>
@@ -221,7 +213,7 @@
 
 <!-- ------List Pet------- -->
 
-<button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#listPet">
+<button type="button" class="btn btn-primary m-2 col-md-2" data-bs-toggle="modal" data-bs-target="#listPet">
     List Pet
 </button>
 
@@ -255,7 +247,7 @@
                                 <td>${i.productAmount}</td>
                                 <td><img class="w-25" src="img/product/${i.productId}.jpg" alt=""></td>
                                 <td><a class="btn btn-primary m-0" href="#">Update</a></td>
-                                <td><a class="btn btn-danger m-0" href="removeproduct?id=${i.productId}">Delete</a></td>
+                                <td><a class="btn btn-danger m-0" onclick="deletePro('${i.productId}')">Delete</a></td>
                             </tr>
 
                         </c:forEach>
@@ -271,7 +263,7 @@
     </div>
 </div>
 <!-- ----------Duyệt đơn hàng--------- -->
-<button type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#accept">
+<button type="button" class="btn btn-primary m-2 col-md-2" data-bs-toggle="modal" data-bs-target="#accept">
     Order Accept
 </button>
 
@@ -279,7 +271,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Duyệt đơn hàng</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -350,7 +342,20 @@
         width: 250px !important;
     }
 </style>
-
+    <script>
+        function deletePro(id){
+            $.ajax({
+            url: '/pet-shop/removeproduct',
+            type: 'GET',
+            data: {
+                id: id,
+            },
+            success: function (data) {
+                document.getElementById("row" + id).remove();
+            }
+        });
+        }
+    </script>
 <!-- JavaScript Libraries 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

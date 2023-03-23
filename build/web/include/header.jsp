@@ -41,6 +41,7 @@
         <link href="css/pluscharts.css"
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="dist/pluscharts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <!-- Topbar Start -->

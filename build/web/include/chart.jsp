@@ -19,7 +19,7 @@
         <jsp:useBean id="chart" scope="page" class="model.repository.AdminRepository"></jsp:useBean>
         <div class="d-flex">
             <div class="col-md-6" id="column-chart"></div>
-            <div class="col-md-6" id="spline-chart"></div>
+            <div class="" id="column-chart2"></div>
         </div>
         <script>
             
@@ -74,8 +74,9 @@
             });
 
 
+           
            pluscharts.draw({
-                drawOn: '#column-chart',
+                drawOn: '#column-chart2',
                 type: "column",
                 dataset: {
                     data: [
@@ -91,7 +92,7 @@
                     backgroundColor: "#7AB730", //can be array or single color
                     borderColor: "#7AB730",
                     borderWidth: 0,
-                    legendLabel: "Doanh số bán hàng theo tháng trong năm 2023"
+                    legendLabel: "Doanh số bán hàng theo tháng năm 2023"
                 },
                 options: {
                     barPadding: .65,

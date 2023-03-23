@@ -7,14 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-
         <%-- 
         <div>
             ${food.productId}
@@ -25,7 +17,7 @@
         </div>
         --%>
 
-        <div class="container-fluid border-bottom d-none d-lg-block pt-5">
+        <div class="container-fluid d-none d-lg-block pt-5">
             <div class="container">
                 <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
                     <h6 class="text-primary text-uppercase">Pet's Food</h6>
@@ -48,6 +40,3 @@
                 </div>
             </div>
         </div>
-       
-    </body>
-</html>
