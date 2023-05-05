@@ -14,7 +14,7 @@ import model.entity.Items;
 import model.repository.OrderRepository;
 
 /**
- *
+ *dd
  * @author quang
  */
 @WebServlet(name = "GetOrderedDetail", urlPatterns = {"/getordereddetail"})
